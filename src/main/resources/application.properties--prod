@@ -1,0 +1,29 @@
+spring.application.name=vision-patrimoine
+server.tomcat.accesslog.enabled=true
+#spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.show-sql=true
+spring.datasource.url=jdbc:postgresql://dpg-crfb0edds78s73cju10g-a.oregon-postgres.render.com:5432/solidarite_360
+#spring.datasource.url=jdbc:postgresql://localhost:5432/db_solidarite_360
+spring.jpa.open-in-view=false
+spring.datasource.username=noadi
+spring.datasource.password=3DdWLDTM92gcCcDhxX1Op8Cw74hRGc1R
+spring.jpa.hibernate.ddl-auto=update
+
+server.servlet.context-path=/api
+#server.port=8081
+spring.main.allow-circular-references=true
+
+# Configuration de emailSender
+spring.mail.default-encoding=UTF-8
+
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=adingra721@gmail.com
+spring.mail.password=Afrik.tech*1
+#spring.mail.protocol=smtp
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true
+spring.mail.properties.mail.smtp.connectiontimeout=5000
+spring.mail.properties.mail.smtp.timeout=5000
+spring.mail.properties.mail.smtp.writetimeout=5000

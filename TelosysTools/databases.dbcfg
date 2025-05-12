@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databases defaultId="1" maxId="10">
+    <db dialect="org.hibernate.dialect.PostgreSQLDialect" driver="org.postgresql.Driver" id="0" isolationLevel="" name="POSTGRESQL" poolSize="1" typeName="POSTGRESQL" url="jdbc:postgresql://dpg-crfb0edds78s73cju10g-a.oregon-postgres.render.com:5432/solidarite_360">
+        <property name="user" value="noadi"/>
+        <property name="password" value="3DdWLDTM92gcCcDhxX1Op8Cw74hRGc1R"/>
+        <metadata catalog="" schema="public" table-name-exclude="" table-name-include="" table-name-pattern="%" table-types="TABLE"/>
+    </db>
+</databases>

@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Telosys Database Repository --><root>
+    <tableList databaseId="0" databaseName="POSTGRESQL" databaseProductName="PostgreSQL" generation="2024-10-05 13:55:18">
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Activite" name="activite" schema="public">
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_debut" dbNotNull="true" dbPosition="1" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateDebut" javaType="java.util.Date" jdbcTypeCode="93" label="Date debut" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_fin" dbNotNull="true" dbPosition="2" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateFin" javaType="java.util.Date" jdbcTypeCode="93" label="Date fin" notNull="true" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_activite" dbNotNull="true" dbPosition="3" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idActivite" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id activite" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="3" dbSize="2147483647" dbTypeName="text" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="lieu" dbNotNull="false" dbPosition="4" dbSize="255" dbTypeName="varchar" inputType="text" javaName="lieu" javaType="java.lang.String" jdbcTypeCode="12" label="Lieu" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="organisation_id" dbNotNull="true" dbPosition="4" dbSize="19" dbTypeName="int8" inputType="number" javaName="organisationId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Organisation id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="nom" dbNotNull="true" dbPosition="5" dbSize="255" dbTypeName="varchar" inputType="text" javaName="nom" javaType="java.lang.String" jdbcTypeCode="12" label="Nom" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="code_postal" dbNotNull="false" dbPosition="5" dbSize="255" dbTypeName="varchar" inputType="text" javaName="codePostal" javaType="java.lang.String" jdbcTypeCode="12" label="Code postal" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="nom_rue" dbNotNull="false" dbPosition="9" dbSize="255" dbTypeName="varchar" inputType="text" javaName="nomRue" javaType="java.lang.String" jdbcTypeCode="12" label="Nom rue" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="numero_rue" dbNotNull="false" dbPosition="10" dbSize="255" dbTypeName="varchar" inputType="text" javaName="numeroRue" javaType="java.lang.String" jdbcTypeCode="12" label="Numero rue" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="reference" dbNotNull="false" dbPosition="11" dbSize="255" dbTypeName="varchar" inputType="text" javaName="reference" javaType="java.lang.String" jdbcTypeCode="12" label="Reference" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="ville" dbNotNull="false" dbPosition="12" dbSize="255" dbTypeName="varchar" inputType="text" javaName="ville" javaType="java.lang.String" jdbcTypeCode="12" label="Ville" maxLength="255" notNull="false" selected="true"/>
+            <fk name="fk6smdvfygs2ytguwdcwlyi2suo">
+                <fkcol colname="organisation_id" colref="id_association" deferrable="7" deleterule="3" sequence="1" tablename="activite" tableref="organisation" updaterule="3"/>
+            </fk>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkfgjs8vn5ux0nidrl1s5w94qf3" id="LINK_FK_fkfgjs8vn5ux0nidrl1s5w94qf3_I" inverseSideOf="LINK_FK_fkfgjs8vn5ux0nidrl1s5w94qf3_O" javaName="listOfActiviteMedias" javaType="unused" joinTableName="" mappedBy="activite" optional="" owningSide="false" sourceTableName="activite" targetEntity="ActiviteMedias" targetTableName="activite_medias" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkp47otipppqgfpauwvcj3y238m" id="LINK_FK_fkp47otipppqgfpauwvcj3y238m_I" inverseSideOf="LINK_FK_fkp47otipppqgfpauwvcj3y238m_O" javaName="listOfPresenceActivite" javaType="unused" joinTableName="" mappedBy="activite" optional="" owningSide="false" sourceTableName="activite" targetEntity="PresenceActivite" targetTableName="presence_activite" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fklbxlpfqys7i2j5r9f0xwli72c" id="LINK_FK_fklbxlpfqys7i2j5r9f0xwli72c_I" inverseSideOf="LINK_FK_fklbxlpfqys7i2j5r9f0xwli72c_O" javaName="listOfActiviteComptesRendus" javaType="unused" joinTableName="" mappedBy="activite" optional="" owningSide="false" sourceTableName="activite" targetEntity="ActiviteComptesRendus" targetTableName="activite_comptes_rendus" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fknjl5dswp6dryx9imgdrr1hk2m" id="LINK_FK_fknjl5dswp6dryx9imgdrr1hk2m_I" inverseSideOf="LINK_FK_fknjl5dswp6dryx9imgdrr1hk2m_O" javaName="listOfCompteRendu" javaType="unused" joinTableName="" mappedBy="activite" optional="" owningSide="false" sourceTableName="activite" targetEntity="CompteRendu" targetTableName="compte_rendu" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk9euaetrpsubic9m42o2t926h5" id="LINK_FK_fk9euaetrpsubic9m42o2t926h5_I" inverseSideOf="LINK_FK_fk9euaetrpsubic9m42o2t926h5_O" javaName="listOfFeedback" javaType="unused" joinTableName="" mappedBy="activite" optional="" owningSide="false" sourceTableName="activite" targetEntity="Feedback" targetTableName="feedback" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkap7rb2omi2mdi5w77w7nu0nqq" id="LINK_FK_fkap7rb2omi2mdi5w77w7nu0nqq_I" inverseSideOf="LINK_FK_fkap7rb2omi2mdi5w77w7nu0nqq_O" javaName="listOfActiviteParticipants" javaType="unused" joinTableName="" mappedBy="activite" optional="" owningSide="false" sourceTableName="activite" targetEntity="ActiviteParticipants" targetTableName="activite_participants" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk6smdvfygs2ytguwdcwlyi2suo" id="LINK_FK_fk6smdvfygs2ytguwdcwlyi2suo_O" inverseSideOf="" javaName="organisation" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="activite" targetEntity="Organisation" targetTableName="organisation" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="organisation_id" nullable="true" referencedColumnName="id_association" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk3317omx6kgpc1iaif8b29p6kw" id="LINK_FK_fk3317omx6kgpc1iaif8b29p6kw_I" inverseSideOf="LINK_FK_fk3317omx6kgpc1iaif8b29p6kw_O" javaName="listOfTache" javaType="unused" joinTableName="" mappedBy="activite" optional="" owningSide="false" sourceTableName="activite" targetEntity="Tache" targetTableName="tache" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkbqkq4c8imuyitndqjk57fobo7" id="LINK_FK_fkbqkq4c8imuyitndqjk57fobo7_I" inverseSideOf="LINK_FK_fkbqkq4c8imuyitndqjk57fobo7_O" javaName="listOfActivitePresenceActivites" javaType="unused" joinTableName="" mappedBy="activite" optional="" owningSide="false" sourceTableName="activite" targetEntity="ActivitePresenceActivites" targetTableName="activite_presence_activites" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkcva93upg7q6k636agqj8ysukl" id="LINK_FK_fkcva93upg7q6k636agqj8ysukl_I" inverseSideOf="LINK_FK_fkcva93upg7q6k636agqj8ysukl_O" javaName="listOfMedia" javaType="unused" joinTableName="" mappedBy="activite" optional="" owningSide="false" sourceTableName="activite" targetEntity="Media" targetTableName="media" used="true"/>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="ActiviteComptesRendus" name="activite_comptes_rendus" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="activite_id_activite" dbNotNull="true" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="activiteIdActivite" javaType="java.lang.Long" jdbcTypeCode="-5" label="Activite id activite" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="comptes_rendus_id" dbNotNull="true" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="comptesRendusId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Comptes rendus id" notNull="true" selected="true"/>
+            <fk name="fklbxlpfqys7i2j5r9f0xwli72c">
+                <fkcol colname="activite_id_activite" colref="id_activite" deferrable="7" deleterule="3" sequence="1" tablename="activite_comptes_rendus" tableref="activite" updaterule="3"/>
+            </fk>
+            <fk name="fklqjqm4nq4gwb0u2b1yr9a9mfh">
+                <fkcol colname="comptes_rendus_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="activite_comptes_rendus" tableref="compte_rendu" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fklbxlpfqys7i2j5r9f0xwli72c" id="LINK_FK_fklbxlpfqys7i2j5r9f0xwli72c_O" inverseSideOf="" javaName="activite" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="activite_comptes_rendus" targetEntity="Activite" targetTableName="activite" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="activite_id_activite" nullable="true" referencedColumnName="id_activite" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fklqjqm4nq4gwb0u2b1yr9a9mfh" id="LINK_FK_fklqjqm4nq4gwb0u2b1yr9a9mfh_O" inverseSideOf="" javaName="compteRendu" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="activite_comptes_rendus" targetEntity="CompteRendu" targetTableName="compte_rendu" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="comptes_rendus_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="ActiviteMedias" name="activite_medias" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="activite_id_activite" dbNotNull="true" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="activiteIdActivite" javaType="java.lang.Long" jdbcTypeCode="-5" label="Activite id activite" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="medias_id" dbNotNull="true" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="mediasId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Medias id" notNull="true" selected="true"/>
+            <fk name="fkbts21lt7l7q1sq8jsmrpy9r7k">
+                <fkcol colname="medias_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="activite_medias" tableref="media" updaterule="3"/>
+            </fk>
+            <fk name="fkfgjs8vn5ux0nidrl1s5w94qf3">
+                <fkcol colname="activite_id_activite" colref="id_activite" deferrable="7" deleterule="3" sequence="1" tablename="activite_medias" tableref="activite" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkfgjs8vn5ux0nidrl1s5w94qf3" id="LINK_FK_fkfgjs8vn5ux0nidrl1s5w94qf3_O" inverseSideOf="" javaName="activite" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="activite_medias" targetEntity="Activite" targetTableName="activite" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="activite_id_activite" nullable="true" referencedColumnName="id_activite" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkbts21lt7l7q1sq8jsmrpy9r7k" id="LINK_FK_fkbts21lt7l7q1sq8jsmrpy9r7k_O" inverseSideOf="" javaName="media" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="activite_medias" targetEntity="Media" targetTableName="media" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="medias_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="ActiviteParticipants" name="activite_participants" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="activite_id_activite" dbNotNull="true" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="activiteIdActivite" javaType="java.lang.Long" jdbcTypeCode="-5" label="Activite id activite" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="participants_id" dbNotNull="true" dbPosition="2" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="participantsId" javaType="java.lang.String" jdbcTypeCode="1111" label="Participants id" maxLength="2147483647" notEmpty="true" notNull="true" selected="true"/>
+            <fk name="fkap7rb2omi2mdi5w77w7nu0nqq">
+                <fkcol colname="activite_id_activite" colref="id_activite" deferrable="7" deleterule="3" sequence="1" tablename="activite_participants" tableref="activite" updaterule="3"/>
+            </fk>
+            <fk name="fksiopu4swisu0o2kktru066v5n">
+                <fkcol colname="participants_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="activite_participants" tableref="membre" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkap7rb2omi2mdi5w77w7nu0nqq" id="LINK_FK_fkap7rb2omi2mdi5w77w7nu0nqq_O" inverseSideOf="" javaName="activite" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="activite_participants" targetEntity="Activite" targetTableName="activite" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="activite_id_activite" nullable="true" referencedColumnName="id_activite" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fksiopu4swisu0o2kktru066v5n" id="LINK_FK_fksiopu4swisu0o2kktru066v5n_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="activite_participants" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="participants_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="ActivitePresenceActivites" name="activite_presence_activites" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="activite_id_activite" dbNotNull="true" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="activiteIdActivite" javaType="java.lang.Long" jdbcTypeCode="-5" label="Activite id activite" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="presence_activites_id_presence" dbNotNull="true" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="presenceActivitesIdPresence" javaType="java.lang.Long" jdbcTypeCode="-5" label="Presence activites id presence" notNull="true" selected="true"/>
+            <fk name="fkbqkq4c8imuyitndqjk57fobo7">
+                <fkcol colname="activite_id_activite" colref="id_activite" deferrable="7" deleterule="3" sequence="1" tablename="activite_presence_activites" tableref="activite" updaterule="3"/>
+            </fk>
+            <fk name="fkfq7roga4pi6w0qbn38rx2v4mo">
+                <fkcol colname="presence_activites_id_presence" colref="id_presence" deferrable="7" deleterule="3" sequence="1" tablename="activite_presence_activites" tableref="presence_activite" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkfq7roga4pi6w0qbn38rx2v4mo" id="LINK_FK_fkfq7roga4pi6w0qbn38rx2v4mo_O" inverseSideOf="" javaName="presenceActivite" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="activite_presence_activites" targetEntity="PresenceActivite" targetTableName="presence_activite" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="presence_activites_id_presence" nullable="true" referencedColumnName="id_presence" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkbqkq4c8imuyitndqjk57fobo7" id="LINK_FK_fkbqkq4c8imuyitndqjk57fobo7_O" inverseSideOf="" javaName="activite" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="activite_presence_activites" targetEntity="Activite" targetTableName="activite" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="activite_id_activite" nullable="true" referencedColumnName="id_activite" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="CompteRendu" name="compte_rendu" schema="public">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="id" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="activite_id_activite" dbNotNull="false" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="activiteIdActivite" javaType="java.lang.Long" jdbcTypeCode="-5" label="Activite id activite" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="contenu" dbNotNull="false" dbPosition="2" dbSize="255" dbTypeName="varchar" inputType="text" javaName="contenu" javaType="java.lang.String" jdbcTypeCode="12" label="Contenu" maxLength="255" notNull="false" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_creation" dbNotNull="false" dbPosition="3" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateCreation" javaType="java.util.Date" jdbcTypeCode="93" label="Date creation" notNull="false" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_modification" dbNotNull="false" dbPosition="3" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateModification" javaType="java.util.Date" jdbcTypeCode="93" label="Date modification" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="evenement_id" dbNotNull="false" dbPosition="4" dbSize="19" dbTypeName="int8" inputType="number" javaName="evenementId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Evenement id" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="auteur_id" dbNotNull="false" dbPosition="4" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="auteurId" javaType="java.lang.String" jdbcTypeCode="1111" label="Auteur id" maxLength="2147483647" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="reunion_id" dbNotNull="false" dbPosition="5" dbSize="19" dbTypeName="int8" inputType="number" javaName="reunionId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Reunion id" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="type_document_id" dbNotNull="false" dbPosition="7" dbSize="19" dbTypeName="int8" inputType="number" javaName="typeDocumentId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Type document id" notNull="false" selected="true"/>
+            <fk name="fk1tr5pm5qddqfy3ewxi32t5t40">
+                <fkcol colname="auteur_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="compte_rendu" tableref="membre" updaterule="3"/>
+            </fk>
+            <fk name="fk2ir6dfvywpusnpjc62f3oqmw2">
+                <fkcol colname="reunion_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="compte_rendu" tableref="reunion" updaterule="3"/>
+            </fk>
+            <fk name="fk6vnsjpunc3wamwghm7291axyb">
+                <fkcol colname="evenement_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="compte_rendu" tableref="evenement" updaterule="3"/>
+            </fk>
+            <fk name="fk7eys7i8kh0vgql79fmcs52l4u">
+                <fkcol colname="type_document_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="compte_rendu" tableref="type_document" updaterule="3"/>
+            </fk>
+            <fk name="fknjl5dswp6dryx9imgdrr1hk2m">
+                <fkcol colname="activite_id_activite" colref="id_activite" deferrable="7" deleterule="3" sequence="1" tablename="compte_rendu" tableref="activite" updaterule="3"/>
+            </fk>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkf7t1b58mf752wkio8xrd2fh5" id="LINK_FK_fkf7t1b58mf752wkio8xrd2fh5_I" inverseSideOf="LINK_FK_fkf7t1b58mf752wkio8xrd2fh5_O" javaName="listOfReunionComptesRendus" javaType="unused" joinTableName="" mappedBy="compteRendu" optional="" owningSide="false" sourceTableName="compte_rendu" targetEntity="ReunionComptesRendus" targetTableName="reunion_comptes_rendus" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkoexxertbohbt0173xsl4urodn" id="LINK_FK_fkoexxertbohbt0173xsl4urodn_I" inverseSideOf="LINK_FK_fkoexxertbohbt0173xsl4urodn_O" javaName="listOfEvenementComptesRendus" javaType="unused" joinTableName="" mappedBy="compteRendu" optional="" owningSide="false" sourceTableName="compte_rendu" targetEntity="EvenementComptesRendus" targetTableName="evenement_comptes_rendus" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fklqjqm4nq4gwb0u2b1yr9a9mfh" id="LINK_FK_fklqjqm4nq4gwb0u2b1yr9a9mfh_I" inverseSideOf="LINK_FK_fklqjqm4nq4gwb0u2b1yr9a9mfh_O" javaName="listOfActiviteComptesRendus" javaType="unused" joinTableName="" mappedBy="compteRendu" optional="" owningSide="false" sourceTableName="compte_rendu" targetEntity="ActiviteComptesRendus" targetTableName="activite_comptes_rendus" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk1tr5pm5qddqfy3ewxi32t5t40" id="LINK_FK_fk1tr5pm5qddqfy3ewxi32t5t40_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="compte_rendu" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="auteur_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk7eys7i8kh0vgql79fmcs52l4u" id="LINK_FK_fk7eys7i8kh0vgql79fmcs52l4u_O" inverseSideOf="" javaName="typeDocument" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="compte_rendu" targetEntity="TypeDocument" targetTableName="type_document" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="type_document_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk6vnsjpunc3wamwghm7291axyb" id="LINK_FK_fk6vnsjpunc3wamwghm7291axyb_O" inverseSideOf="" javaName="evenement" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="compte_rendu" targetEntity="Evenement" targetTableName="evenement" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="evenement_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk2ir6dfvywpusnpjc62f3oqmw2" id="LINK_FK_fk2ir6dfvywpusnpjc62f3oqmw2_O" inverseSideOf="" javaName="reunion" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="compte_rendu" targetEntity="Reunion" targetTableName="reunion" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="reunion_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fknjl5dswp6dryx9imgdrr1hk2m" id="LINK_FK_fknjl5dswp6dryx9imgdrr1hk2m_O" inverseSideOf="" javaName="activite" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="compte_rendu" targetEntity="Activite" targetTableName="activite" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="activite_id_activite" nullable="true" referencedColumnName="id_activite" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Cotisation" name="cotisation" schema="public">
+            <column dateType="D" dbComment="" dbDefaultValue="" dbName="date_cotisation" dbNotNull="true" dbPosition="1" dbSize="13" dbTypeName="date" inputType="date" javaName="dateCotisation" javaType="java.util.Date" jdbcTypeCode="91" label="Date cotisation" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="3" dbSize="255" dbTypeName="varchar" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="255" notNull="false" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_cotisation" dbNotNull="true" dbPosition="3" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idCotisation" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id cotisation" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="libelle" dbNotNull="true" dbPosition="4" dbSize="255" dbTypeName="varchar" inputType="text" javaName="libelle" javaType="java.lang.String" jdbcTypeCode="12" label="Libelle" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="montant" dbNotNull="true" dbPosition="6" dbSize="17" dbTypeName="float8" inputType="number" javaName="montant" javaType="java.math.BigDecimal" jdbcTypeCode="8" label="Montant" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="membre_id" dbNotNull="true" dbPosition="7" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="membreId" javaType="java.lang.String" jdbcTypeCode="1111" label="Membre id" maxLength="2147483647" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="periode" dbNotNull="false" dbPosition="7" dbSize="255" dbTypeName="varchar" inputType="text" javaName="periode" javaType="java.lang.String" jdbcTypeCode="12" label="Periode" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="statut" dbNotNull="false" dbPosition="8" dbSize="255" dbTypeName="varchar" inputType="text" javaName="statut" javaType="java.lang.String" jdbcTypeCode="12" label="Statut" maxLength="255" notNull="false" selected="true"/>
+            <fk name="fkap2xjbq6v0pi5o1fg9qdhrl4o">
+                <fkcol colname="membre_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="cotisation" tableref="membre" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkap2xjbq6v0pi5o1fg9qdhrl4o" id="LINK_FK_fkap2xjbq6v0pi5o1fg9qdhrl4o_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="cotisation" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="membre_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Depense" name="depense" schema="public">
+            <column dateType="D" dbComment="" dbDefaultValue="" dbName="date_depense" dbNotNull="true" dbPosition="1" dbSize="13" dbTypeName="date" inputType="date" javaName="dateDepense" javaType="java.util.Date" jdbcTypeCode="91" label="Date depense" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="montant" dbNotNull="true" dbPosition="2" dbSize="17" dbTypeName="float8" inputType="number" javaName="montant" javaType="java.lang.Double" jdbcTypeCode="8" label="Montant" notNull="true" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_depense" dbNotNull="true" dbPosition="3" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idDepense" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id depense" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="organisation_id_association" dbNotNull="false" dbPosition="4" dbSize="19" dbTypeName="int8" inputType="number" javaName="organisationIdAssociation" javaType="java.lang.Long" jdbcTypeCode="-5" label="Organisation id association" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="5" dbSize="2147483647" dbTypeName="text" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="2147483647" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="libelle" dbNotNull="false" dbPosition="6" dbSize="255" dbTypeName="varchar" inputType="text" javaName="libelle" javaType="java.lang.String" jdbcTypeCode="12" label="Libelle" maxLength="255" notNull="false" selected="true"/>
+            <fk name="fk2avq61gn0axeflqw4o64d2m0y">
+                <fkcol colname="organisation_id_association" colref="id_association" deferrable="7" deleterule="3" sequence="1" tablename="depense" tableref="organisation" updaterule="3"/>
+            </fk>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkpt4kuq7tjhe7bt09batilc6er" id="LINK_FK_fkpt4kuq7tjhe7bt09batilc6er_I" inverseSideOf="LINK_FK_fkpt4kuq7tjhe7bt09batilc6er_O" javaName="listOfValidation" javaType="unused" joinTableName="" mappedBy="depense" optional="" owningSide="false" sourceTableName="depense" targetEntity="Validation" targetTableName="validation" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk2avq61gn0axeflqw4o64d2m0y" id="LINK_FK_fk2avq61gn0axeflqw4o64d2m0y_O" inverseSideOf="" javaName="organisation" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="depense" targetEntity="Organisation" targetTableName="organisation" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="organisation_id_association" nullable="true" referencedColumnName="id_association" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Document" name="document" schema="public">
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_upload" dbNotNull="true" dbPosition="1" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateUpload" javaType="java.util.Date" jdbcTypeCode="93" label="Date upload" notNull="true" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_document" dbNotNull="true" dbPosition="2" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idDocument" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id document" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="organisation_id_association" dbNotNull="false" dbPosition="3" dbSize="19" dbTypeName="int8" inputType="number" javaName="organisationIdAssociation" javaType="java.lang.Long" jdbcTypeCode="-5" label="Organisation id association" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="id_membre_uploader" dbNotNull="true" dbPosition="4" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="idMembreUploader" javaType="java.lang.String" jdbcTypeCode="1111" label="Id membre uploader" maxLength="2147483647" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="fichier_document" dbNotNull="true" dbPosition="5" dbSize="255" dbTypeName="varchar" inputType="text" javaName="fichierDocument" javaType="java.lang.String" jdbcTypeCode="12" label="Fichier document" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="titre_document" dbNotNull="true" dbPosition="6" dbSize="255" dbTypeName="varchar" inputType="text" javaName="titreDocument" javaType="java.lang.String" jdbcTypeCode="12" label="Titre document" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="type_document" dbNotNull="true" dbPosition="7" dbSize="255" dbTypeName="varchar" inputType="text" javaName="typeDocument" javaType="java.lang.String" jdbcTypeCode="12" label="Type document" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <fk name="fk6w7tkbuw6kn8nhrco478st4f7">
+                <fkcol colname="id_membre_uploader" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="document" tableref="membre" updaterule="3"/>
+            </fk>
+            <fk name="fkdvj6w0g59ghnq1ksbf43cy2h5">
+                <fkcol colname="organisation_id_association" colref="id_association" deferrable="7" deleterule="3" sequence="1" tablename="document" tableref="organisation" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkdvj6w0g59ghnq1ksbf43cy2h5" id="LINK_FK_fkdvj6w0g59ghnq1ksbf43cy2h5_O" inverseSideOf="" javaName="organisation" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="document" targetEntity="Organisation" targetTableName="organisation" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="organisation_id_association" nullable="true" referencedColumnName="id_association" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk6w7tkbuw6kn8nhrco478st4f7" id="LINK_FK_fk6w7tkbuw6kn8nhrco478st4f7_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="document" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="id_membre_uploader" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Evenement" name="evenement" schema="public">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="id" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_debut" dbNotNull="true" dbPosition="1" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateDebut" javaType="java.util.Date" jdbcTypeCode="93" label="Date debut" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_fin" dbNotNull="true" dbPosition="2" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateFin" javaType="java.util.Date" jdbcTypeCode="93" label="Date fin" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="3" dbSize="255" dbTypeName="varchar" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="organisation_id_association" dbNotNull="false" dbPosition="4" dbSize="19" dbTypeName="int8" inputType="number" javaName="organisationIdAssociation" javaType="java.lang.Long" jdbcTypeCode="-5" label="Organisation id association" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="lieu" dbNotNull="false" dbPosition="4" dbSize="255" dbTypeName="varchar" inputType="text" javaName="lieu" javaType="java.lang.String" jdbcTypeCode="12" label="Lieu" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="nom" dbNotNull="false" dbPosition="5" dbSize="255" dbTypeName="varchar" inputType="text" javaName="nom" javaType="java.lang.String" jdbcTypeCode="12" label="Nom" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="code_postal" dbNotNull="false" dbPosition="5" dbSize="255" dbTypeName="varchar" inputType="text" javaName="codePostal" javaType="java.lang.String" jdbcTypeCode="12" label="Code postal" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="nom_rue" dbNotNull="false" dbPosition="9" dbSize="255" dbTypeName="varchar" inputType="text" javaName="nomRue" javaType="java.lang.String" jdbcTypeCode="12" label="Nom rue" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="numero_rue" dbNotNull="false" dbPosition="10" dbSize="255" dbTypeName="varchar" inputType="text" javaName="numeroRue" javaType="java.lang.String" jdbcTypeCode="12" label="Numero rue" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="reference" dbNotNull="false" dbPosition="11" dbSize="255" dbTypeName="varchar" inputType="text" javaName="reference" javaType="java.lang.String" jdbcTypeCode="12" label="Reference" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="ville" dbNotNull="false" dbPosition="12" dbSize="255" dbTypeName="varchar" inputType="text" javaName="ville" javaType="java.lang.String" jdbcTypeCode="12" label="Ville" maxLength="255" notNull="false" selected="true"/>
+            <fk name="fki93hqt0gk3tgfggvtparr1lle">
+                <fkcol colname="organisation_id_association" colref="id_association" deferrable="7" deleterule="3" sequence="1" tablename="evenement" tableref="organisation" updaterule="3"/>
+            </fk>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk6vnsjpunc3wamwghm7291axyb" id="LINK_FK_fk6vnsjpunc3wamwghm7291axyb_I" inverseSideOf="LINK_FK_fk6vnsjpunc3wamwghm7291axyb_O" javaName="listOfCompteRendu" javaType="unused" joinTableName="" mappedBy="evenement" optional="" owningSide="false" sourceTableName="evenement" targetEntity="CompteRendu" targetTableName="compte_rendu" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fknpcusa2dhcpc6ipu61uncvwm0" id="LINK_FK_fknpcusa2dhcpc6ipu61uncvwm0_I" inverseSideOf="LINK_FK_fknpcusa2dhcpc6ipu61uncvwm0_O" javaName="listOfEvenementComptesRendus" javaType="unused" joinTableName="" mappedBy="evenement" optional="" owningSide="false" sourceTableName="evenement" targetEntity="EvenementComptesRendus" targetTableName="evenement_comptes_rendus" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk12i6j3b01de120h5jnfd6qaro" id="LINK_FK_fk12i6j3b01de120h5jnfd6qaro_I" inverseSideOf="LINK_FK_fk12i6j3b01de120h5jnfd6qaro_O" javaName="listOfEvenementParticipants" javaType="unused" joinTableName="" mappedBy="evenement" optional="" owningSide="false" sourceTableName="evenement" targetEntity="EvenementParticipants" targetTableName="evenement_participants" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk34vd96l8sp7aprmww9ylpksr7" id="LINK_FK_fk34vd96l8sp7aprmww9ylpksr7_I" inverseSideOf="LINK_FK_fk34vd96l8sp7aprmww9ylpksr7_O" javaName="listOfFeedback" javaType="unused" joinTableName="" mappedBy="evenement" optional="" owningSide="false" sourceTableName="evenement" targetEntity="Feedback" targetTableName="feedback" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk3pgq32n22dsi1kqkqtfvm3q5q" id="LINK_FK_fk3pgq32n22dsi1kqkqtfvm3q5q_I" inverseSideOf="LINK_FK_fk3pgq32n22dsi1kqkqtfvm3q5q_O" javaName="listOfRecompense" javaType="unused" joinTableName="" mappedBy="evenement" optional="" owningSide="false" sourceTableName="evenement" targetEntity="Recompense" targetTableName="recompense" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk5c91okv3l7c1634vkf7u2xlt5" id="LINK_FK_fk5c91okv3l7c1634vkf7u2xlt5_I" inverseSideOf="LINK_FK_fk5c91okv3l7c1634vkf7u2xlt5_O" javaName="listOfEvenementPresenceEvenements" javaType="unused" joinTableName="" mappedBy="evenement" optional="" owningSide="false" sourceTableName="evenement" targetEntity="EvenementPresenceEvenements" targetTableName="evenement_presence_evenements" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkrcvat0njtuigli4j26wh8uymh" id="LINK_FK_fkrcvat0njtuigli4j26wh8uymh_I" inverseSideOf="LINK_FK_fkrcvat0njtuigli4j26wh8uymh_O" javaName="listOfTache" javaType="unused" joinTableName="" mappedBy="evenement" optional="" owningSide="false" sourceTableName="evenement" targetEntity="Tache" targetTableName="tache" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk7o81v4t8r9r2l43w1jx7gh6q5" id="LINK_FK_fk7o81v4t8r9r2l43w1jx7gh6q5_I" inverseSideOf="LINK_FK_fk7o81v4t8r9r2l43w1jx7gh6q5_O" javaName="listOfPresenceEvenement" javaType="unused" joinTableName="" mappedBy="evenement" optional="" owningSide="false" sourceTableName="evenement" targetEntity="PresenceEvenement" targetTableName="presence_evenement" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkrtsyqxgraxknj5c0bxw4bw147" id="LINK_FK_fkrtsyqxgraxknj5c0bxw4bw147_I" inverseSideOf="LINK_FK_fkrtsyqxgraxknj5c0bxw4bw147_O" javaName="listOfEvenementMedias" javaType="unused" joinTableName="" mappedBy="evenement" optional="" owningSide="false" sourceTableName="evenement" targetEntity="EvenementMedias" targetTableName="evenement_medias" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkln3xwg6lvqb47ro07bhs884ej" id="LINK_FK_fkln3xwg6lvqb47ro07bhs884ej_I" inverseSideOf="LINK_FK_fkln3xwg6lvqb47ro07bhs884ej_O" javaName="listOfMedia" javaType="unused" joinTableName="" mappedBy="evenement" optional="" owningSide="false" sourceTableName="evenement" targetEntity="Media" targetTableName="media" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fki93hqt0gk3tgfggvtparr1lle" id="LINK_FK_fki93hqt0gk3tgfggvtparr1lle_O" inverseSideOf="" javaName="organisation" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="evenement" targetEntity="Organisation" targetTableName="organisation" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="organisation_id_association" nullable="true" referencedColumnName="id_association" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="EvenementComptesRendus" name="evenement_comptes_rendus" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="evenement_id" dbNotNull="true" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="evenementId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Evenement id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="comptes_rendus_id" dbNotNull="true" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="comptesRendusId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Comptes rendus id" notNull="true" selected="true"/>
+            <fk name="fknpcusa2dhcpc6ipu61uncvwm0">
+                <fkcol colname="evenement_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="evenement_comptes_rendus" tableref="evenement" updaterule="3"/>
+            </fk>
+            <fk name="fkoexxertbohbt0173xsl4urodn">
+                <fkcol colname="comptes_rendus_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="evenement_comptes_rendus" tableref="compte_rendu" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkoexxertbohbt0173xsl4urodn" id="LINK_FK_fkoexxertbohbt0173xsl4urodn_O" inverseSideOf="" javaName="compteRendu" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="evenement_comptes_rendus" targetEntity="CompteRendu" targetTableName="compte_rendu" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="comptes_rendus_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fknpcusa2dhcpc6ipu61uncvwm0" id="LINK_FK_fknpcusa2dhcpc6ipu61uncvwm0_O" inverseSideOf="" javaName="evenement" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="evenement_comptes_rendus" targetEntity="Evenement" targetTableName="evenement" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="evenement_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="EvenementMedias" name="evenement_medias" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="evenement_id" dbNotNull="true" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="evenementId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Evenement id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="medias_id" dbNotNull="true" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="mediasId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Medias id" notNull="true" selected="true"/>
+            <fk name="fkmnqrub0n69t8ngn2j0hptavec">
+                <fkcol colname="medias_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="evenement_medias" tableref="media" updaterule="3"/>
+            </fk>
+            <fk name="fkrtsyqxgraxknj5c0bxw4bw147">
+                <fkcol colname="evenement_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="evenement_medias" tableref="evenement" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkrtsyqxgraxknj5c0bxw4bw147" id="LINK_FK_fkrtsyqxgraxknj5c0bxw4bw147_O" inverseSideOf="" javaName="evenement" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="evenement_medias" targetEntity="Evenement" targetTableName="evenement" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="evenement_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkmnqrub0n69t8ngn2j0hptavec" id="LINK_FK_fkmnqrub0n69t8ngn2j0hptavec_O" inverseSideOf="" javaName="media" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="evenement_medias" targetEntity="Media" targetTableName="media" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="medias_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="EvenementParticipants" name="evenement_participants" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="evenement_id" dbNotNull="true" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="evenementId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Evenement id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="participants_id" dbNotNull="true" dbPosition="2" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="participantsId" javaType="java.lang.String" jdbcTypeCode="1111" label="Participants id" maxLength="2147483647" notEmpty="true" notNull="true" selected="true"/>
+            <fk name="fk12i6j3b01de120h5jnfd6qaro">
+                <fkcol colname="evenement_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="evenement_participants" tableref="evenement" updaterule="3"/>
+            </fk>
+            <fk name="fka9eq6dkkyoxq0tsbpy8xt0v4v">
+                <fkcol colname="participants_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="evenement_participants" tableref="membre" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fka9eq6dkkyoxq0tsbpy8xt0v4v" id="LINK_FK_fka9eq6dkkyoxq0tsbpy8xt0v4v_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="evenement_participants" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="participants_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk12i6j3b01de120h5jnfd6qaro" id="LINK_FK_fk12i6j3b01de120h5jnfd6qaro_O" inverseSideOf="" javaName="evenement" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="evenement_participants" targetEntity="Evenement" targetTableName="evenement" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="evenement_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="EvenementPresenceEvenements" name="evenement_presence_evenements" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="evenement_id" dbNotNull="true" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="evenementId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Evenement id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="presence_evenements_id_presence" dbNotNull="true" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="presenceEvenementsIdPresence" javaType="java.lang.Long" jdbcTypeCode="-5" label="Presence evenements id presence" notNull="true" selected="true"/>
+            <fk name="fk5c91okv3l7c1634vkf7u2xlt5">
+                <fkcol colname="evenement_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="evenement_presence_evenements" tableref="evenement" updaterule="3"/>
+            </fk>
+            <fk name="fkg2c1ov6f8vylvun3sspiamqql">
+                <fkcol colname="presence_evenements_id_presence" colref="id_presence" deferrable="7" deleterule="3" sequence="1" tablename="evenement_presence_evenements" tableref="presence_evenement" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk5c91okv3l7c1634vkf7u2xlt5" id="LINK_FK_fk5c91okv3l7c1634vkf7u2xlt5_O" inverseSideOf="" javaName="evenement" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="evenement_presence_evenements" targetEntity="Evenement" targetTableName="evenement" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="evenement_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkg2c1ov6f8vylvun3sspiamqql" id="LINK_FK_fkg2c1ov6f8vylvun3sspiamqql_O" inverseSideOf="" javaName="presenceEvenement" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="evenement_presence_evenements" targetEntity="PresenceEvenement" targetTableName="presence_evenement" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="presence_evenements_id_presence" nullable="true" referencedColumnName="id_presence" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Feedback" name="feedback" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="note" dbNotNull="true" dbPosition="1" dbSize="10" dbTypeName="int4" inputType="number" javaName="note" javaType="java.lang.Integer" jdbcTypeCode="4" label="Note" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="activite_id_activite" dbNotNull="false" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="activiteIdActivite" javaType="java.lang.Long" jdbcTypeCode="-5" label="Activite id activite" notNull="false" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_feedback" dbNotNull="true" dbPosition="3" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateFeedback" javaType="java.util.Date" jdbcTypeCode="93" label="Date feedback" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="evenement_id" dbNotNull="false" dbPosition="4" dbSize="19" dbTypeName="int8" inputType="number" javaName="evenementId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Evenement id" notNull="false" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_feedback" dbNotNull="true" dbPosition="5" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idFeedback" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id feedback" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="membre_id" dbNotNull="false" dbPosition="6" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="membreId" javaType="java.lang.String" jdbcTypeCode="1111" label="Membre id" maxLength="2147483647" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="commentaire" dbNotNull="true" dbPosition="7" dbSize="255" dbTypeName="varchar" inputType="text" javaName="commentaire" javaType="java.lang.String" jdbcTypeCode="12" label="Commentaire" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <fk name="fk34vd96l8sp7aprmww9ylpksr7">
+                <fkcol colname="evenement_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="feedback" tableref="evenement" updaterule="3"/>
+            </fk>
+            <fk name="fk9euaetrpsubic9m42o2t926h5">
+                <fkcol colname="activite_id_activite" colref="id_activite" deferrable="7" deleterule="3" sequence="1" tablename="feedback" tableref="activite" updaterule="3"/>
+            </fk>
+            <fk name="fkb7b11aoljswponkwndp65edws">
+                <fkcol colname="membre_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="feedback" tableref="membre" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk9euaetrpsubic9m42o2t926h5" id="LINK_FK_fk9euaetrpsubic9m42o2t926h5_O" inverseSideOf="" javaName="activite" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="feedback" targetEntity="Activite" targetTableName="activite" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="activite_id_activite" nullable="true" referencedColumnName="id_activite" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkb7b11aoljswponkwndp65edws" id="LINK_FK_fkb7b11aoljswponkwndp65edws_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="feedback" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="membre_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk34vd96l8sp7aprmww9ylpksr7" id="LINK_FK_fk34vd96l8sp7aprmww9ylpksr7_O" inverseSideOf="" javaName="evenement" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="feedback" targetEntity="Evenement" targetTableName="evenement" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="evenement_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Fonction" name="fonction" schema="public">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="id" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="code" dbNotNull="false" dbPosition="2" dbSize="255" dbTypeName="varchar" inputType="text" javaName="code" javaType="java.lang.String" jdbcTypeCode="12" label="Code" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="3" dbSize="255" dbTypeName="varchar" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="libelle" dbNotNull="false" dbPosition="4" dbSize="255" dbTypeName="varchar" inputType="text" javaName="libelle" javaType="java.lang.String" jdbcTypeCode="12" label="Libelle" maxLength="255" notNull="false" selected="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkpjybh575m9ndkb9hx9om4mtog" id="LINK_FK_fkpjybh575m9ndkb9hx9om4mtog_I" inverseSideOf="LINK_FK_fkpjybh575m9ndkb9hx9om4mtog_O" javaName="listOfMembre" javaType="unused" joinTableName="" mappedBy="fonction" optional="" owningSide="false" sourceTableName="fonction" targetEntity="Membre" targetTableName="membre" used="true"/>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="IndicateurPerformance" name="indicateur_performance" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="valeur_indicateur" dbNotNull="true" dbPosition="1" dbSize="17" dbTypeName="float8" inputType="number" javaName="valeurIndicateur" javaType="java.lang.Double" jdbcTypeCode="8" label="Valeur indicateur" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_calcul" dbNotNull="true" dbPosition="2" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateCalcul" javaType="java.util.Date" jdbcTypeCode="93" label="Date calcul" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="id_association" dbNotNull="true" dbPosition="3" dbSize="19" dbTypeName="int8" inputType="number" javaName="idAssociation" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id association" notNull="true" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_indicateur" dbNotNull="true" dbPosition="4" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idIndicateur" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id indicateur" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="type_indicateur" dbNotNull="true" dbPosition="5" dbSize="255" dbTypeName="varchar" inputType="text" javaName="typeIndicateur" javaType="java.lang.String" jdbcTypeCode="12" label="Type indicateur" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <fk name="fkhcwb8j728441ywsvic04rvrh6">
+                <fkcol colname="id_association" colref="id_association" deferrable="7" deleterule="3" sequence="1" tablename="indicateur_performance" tableref="organisation" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkhcwb8j728441ywsvic04rvrh6" id="LINK_FK_fkhcwb8j728441ywsvic04rvrh6_O" inverseSideOf="" javaName="organisation" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="indicateur_performance" targetEntity="Organisation" targetTableName="organisation" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="id_association" nullable="true" referencedColumnName="id_association" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Media" name="media" schema="public">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="id" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="activite_id_activite" dbNotNull="false" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="activiteIdActivite" javaType="java.lang.Long" jdbcTypeCode="-5" label="Activite id activite" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="chemin_fichier" dbNotNull="false" dbPosition="2" dbSize="255" dbTypeName="varchar" inputType="text" javaName="cheminFichier" javaType="java.lang.String" jdbcTypeCode="12" label="Chemin fichier" maxLength="255" notNull="false" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_creation" dbNotNull="false" dbPosition="3" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateCreation" javaType="java.util.Date" jdbcTypeCode="93" label="Date creation" notNull="false" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_prise" dbNotNull="false" dbPosition="3" dbSize="29" dbTypeName="timestamp" inputType="" javaName="datePrise" javaType="java.util.Date" jdbcTypeCode="93" label="Date prise" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="4" dbSize="255" dbTypeName="varchar" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="titre" dbNotNull="false" dbPosition="5" dbSize="255" dbTypeName="varchar" inputType="text" javaName="titre" javaType="java.lang.String" jdbcTypeCode="12" label="Titre" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="type" dbNotNull="false" dbPosition="6" dbSize="255" dbTypeName="varchar" inputType="text" javaName="type" javaType="java.lang.String" jdbcTypeCode="12" label="Type" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="evenement_id" dbNotNull="false" dbPosition="8" dbSize="19" dbTypeName="int8" inputType="number" javaName="evenementId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Evenement id" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="reunion_id" dbNotNull="false" dbPosition="9" dbSize="19" dbTypeName="int8" inputType="number" javaName="reunionId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Reunion id" notNull="false" selected="true"/>
+            <fk name="fkby4t3bd7lox9ln2xitavsge93">
+                <fkcol colname="reunion_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="media" tableref="reunion" updaterule="3"/>
+            </fk>
+            <fk name="fkcva93upg7q6k636agqj8ysukl">
+                <fkcol colname="activite_id_activite" colref="id_activite" deferrable="7" deleterule="3" sequence="1" tablename="media" tableref="activite" updaterule="3"/>
+            </fk>
+            <fk name="fkln3xwg6lvqb47ro07bhs884ej">
+                <fkcol colname="evenement_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="media" tableref="evenement" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkby4t3bd7lox9ln2xitavsge93" id="LINK_FK_fkby4t3bd7lox9ln2xitavsge93_O" inverseSideOf="" javaName="reunion" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="media" targetEntity="Reunion" targetTableName="reunion" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="reunion_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkmnqrub0n69t8ngn2j0hptavec" id="LINK_FK_fkmnqrub0n69t8ngn2j0hptavec_I" inverseSideOf="LINK_FK_fkmnqrub0n69t8ngn2j0hptavec_O" javaName="listOfEvenementMedias" javaType="unused" joinTableName="" mappedBy="media" optional="" owningSide="false" sourceTableName="media" targetEntity="EvenementMedias" targetTableName="evenement_medias" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkg4br3jpa4ap54sf1vlvveprp1" id="LINK_FK_fkg4br3jpa4ap54sf1vlvveprp1_I" inverseSideOf="LINK_FK_fkg4br3jpa4ap54sf1vlvveprp1_O" javaName="listOfReunionMedias" javaType="unused" joinTableName="" mappedBy="media" optional="" owningSide="false" sourceTableName="media" targetEntity="ReunionMedias" targetTableName="reunion_medias" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkln3xwg6lvqb47ro07bhs884ej" id="LINK_FK_fkln3xwg6lvqb47ro07bhs884ej_O" inverseSideOf="" javaName="evenement" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="media" targetEntity="Evenement" targetTableName="evenement" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="evenement_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkbts21lt7l7q1sq8jsmrpy9r7k" id="LINK_FK_fkbts21lt7l7q1sq8jsmrpy9r7k_I" inverseSideOf="LINK_FK_fkbts21lt7l7q1sq8jsmrpy9r7k_O" javaName="listOfActiviteMedias" javaType="unused" joinTableName="" mappedBy="media" optional="" owningSide="false" sourceTableName="media" targetEntity="ActiviteMedias" targetTableName="activite_medias" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkcva93upg7q6k636agqj8ysukl" id="LINK_FK_fkcva93upg7q6k636agqj8ysukl_O" inverseSideOf="" javaName="activite" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="media" targetEntity="Activite" targetTableName="activite" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="activite_id_activite" nullable="true" referencedColumnName="id_activite" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Membre" name="membre" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="id" javaType="java.lang.String" jdbcTypeCode="1111" label="Id" maxLength="2147483647" notEmpty="true" notNull="true" selected="true"/>
+            <column dateType="D" dbComment="" dbDefaultValue="" dbName="date_adhesion" dbNotNull="false" dbPosition="1" dbSize="13" dbTypeName="date" inputType="date" javaName="dateAdhesion" javaType="java.util.Date" jdbcTypeCode="91" label="Date adhesion" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="code_postal" dbNotNull="false" dbPosition="2" dbSize="255" dbTypeName="varchar" inputType="text" javaName="codePostal" javaType="java.lang.String" jdbcTypeCode="12" label="Code postal" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="nom_rue" dbNotNull="false" dbPosition="3" dbSize="255" dbTypeName="varchar" inputType="text" javaName="nomRue" javaType="java.lang.String" jdbcTypeCode="12" label="Nom rue" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="numero_rue" dbNotNull="false" dbPosition="4" dbSize="255" dbTypeName="varchar" inputType="text" javaName="numeroRue" javaType="java.lang.String" jdbcTypeCode="12" label="Numero rue" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="organisation_id_association" dbNotNull="false" dbPosition="5" dbSize="19" dbTypeName="int8" inputType="number" javaName="organisationIdAssociation" javaType="java.lang.Long" jdbcTypeCode="-5" label="Organisation id association" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="ville" dbNotNull="false" dbPosition="5" dbSize="255" dbTypeName="varchar" inputType="text" javaName="ville" javaType="java.lang.String" jdbcTypeCode="12" label="Ville" maxLength="255" notNull="false" selected="true"/>
+            <column dateType="D" dbComment="" dbDefaultValue="" dbName="date_inscription" dbNotNull="false" dbPosition="6" dbSize="13" dbTypeName="date" inputType="date" javaName="dateInscription" javaType="java.util.Date" jdbcTypeCode="91" label="Date inscription" notNull="false" selected="true"/>
+            <column dateType="D" dbComment="" dbDefaultValue="" dbName="date_naissance" dbNotNull="false" dbPosition="7" dbSize="13" dbTypeName="date" inputType="date" javaName="dateNaissance" javaType="java.util.Date" jdbcTypeCode="91" label="Date naissance" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="email" dbNotNull="false" dbPosition="8" dbSize="255" dbTypeName="varchar" inputType="text" javaName="email" javaType="java.lang.String" jdbcTypeCode="12" label="Email" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="nom" dbNotNull="false" dbPosition="9" dbSize="255" dbTypeName="varchar" inputType="text" javaName="nom" javaType="java.lang.String" jdbcTypeCode="12" label="Nom" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="prenom" dbNotNull="false" dbPosition="10" dbSize="255" dbTypeName="varchar" inputType="text" javaName="prenom" javaType="java.lang.String" jdbcTypeCode="12" label="Prenom" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="statut" dbNotNull="false" dbPosition="11" dbSize="255" dbTypeName="varchar" inputType="text" javaName="statut" javaType="java.lang.String" jdbcTypeCode="12" label="Statut" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="telephone" dbNotNull="false" dbPosition="12" dbSize="255" dbTypeName="varchar" inputType="text" javaName="telephone" javaType="java.lang.String" jdbcTypeCode="12" label="Telephone" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="fonction_id" dbNotNull="false" dbPosition="13" dbSize="19" dbTypeName="int8" inputType="number" javaName="fonctionId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Fonction id" notNull="false" selected="true"/>
+            <fk name="fkdrbestvgop4p7um72iug5felg">
+                <fkcol colname="organisation_id_association" colref="id_association" deferrable="7" deleterule="3" sequence="1" tablename="membre" tableref="organisation" updaterule="3"/>
+            </fk>
+            <fk name="fkpjybh575m9ndkb9hx9om4mtog">
+                <fkcol colname="fonction_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="membre" tableref="fonction" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkdrbestvgop4p7um72iug5felg" id="LINK_FK_fkdrbestvgop4p7um72iug5felg_O" inverseSideOf="" javaName="organisation" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="membre" targetEntity="Organisation" targetTableName="organisation" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="organisation_id_association" nullable="true" referencedColumnName="id_association" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk3j9vub6x05bon5wkhyyjoh4c9" id="LINK_FK_fk3j9vub6x05bon5wkhyyjoh4c9_I" inverseSideOf="LINK_FK_fk3j9vub6x05bon5wkhyyjoh4c9_O" javaName="listOfTache" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="Tache" targetTableName="tache" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkaglc991elsrww6wg2j4of4yva" id="LINK_FK_fkaglc991elsrww6wg2j4of4yva_I" inverseSideOf="LINK_FK_fkaglc991elsrww6wg2j4of4yva_O" javaName="listOfValidation" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="Validation" targetTableName="validation" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk1b0ebl29t439siqmjyyols5sn" id="LINK_FK_fk1b0ebl29t439siqmjyyols5sn_I" inverseSideOf="LINK_FK_fk1b0ebl29t439siqmjyyols5sn_O" javaName="listOfPresenceEvenement" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="PresenceEvenement" targetTableName="presence_evenement" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkap2xjbq6v0pi5o1fg9qdhrl4o" id="LINK_FK_fkap2xjbq6v0pi5o1fg9qdhrl4o_I" inverseSideOf="LINK_FK_fkap2xjbq6v0pi5o1fg9qdhrl4o_O" javaName="listOfCotisation" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="Cotisation" targetTableName="cotisation" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkoeoxqnv520mvywxtpt0tdl7ax" id="LINK_FK_fkoeoxqnv520mvywxtpt0tdl7ax_I" inverseSideOf="LINK_FK_fkoeoxqnv520mvywxtpt0tdl7ax_O" javaName="listOfNotification" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="Notification" targetTableName="notification" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fka9eq6dkkyoxq0tsbpy8xt0v4v" id="LINK_FK_fka9eq6dkkyoxq0tsbpy8xt0v4v_I" inverseSideOf="LINK_FK_fka9eq6dkkyoxq0tsbpy8xt0v4v_O" javaName="listOfEvenementParticipants" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="EvenementParticipants" targetTableName="evenement_participants" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fksiopu4swisu0o2kktru066v5n" id="LINK_FK_fksiopu4swisu0o2kktru066v5n_I" inverseSideOf="LINK_FK_fksiopu4swisu0o2kktru066v5n_O" javaName="listOfActiviteParticipants" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="ActiviteParticipants" targetTableName="activite_participants" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk1tr5pm5qddqfy3ewxi32t5t40" id="LINK_FK_fk1tr5pm5qddqfy3ewxi32t5t40_I" inverseSideOf="LINK_FK_fk1tr5pm5qddqfy3ewxi32t5t40_O" javaName="listOfCompteRendu" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="CompteRendu" targetTableName="compte_rendu" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk6w7tkbuw6kn8nhrco478st4f7" id="LINK_FK_fk6w7tkbuw6kn8nhrco478st4f7_I" inverseSideOf="LINK_FK_fk6w7tkbuw6kn8nhrco478st4f7_O" javaName="listOfDocument" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="Document" targetTableName="document" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk336ocepp62vn6vpcbvvqdoih" id="LINK_FK_fk336ocepp62vn6vpcbvvqdoih_I" inverseSideOf="LINK_FK_fk336ocepp62vn6vpcbvvqdoih_O" javaName="listOfRecompense" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="Recompense" targetTableName="recompense" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk5ppbc2nhu9iuysoqwjrsnahmq" id="LINK_FK_fk5ppbc2nhu9iuysoqwjrsnahmq_I" inverseSideOf="LINK_FK_fk5ppbc2nhu9iuysoqwjrsnahmq_O" javaName="listOfPresenceActivite" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="PresenceActivite" targetTableName="presence_activite" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk9k5xs3rq3s65v603cf0kptim6" id="LINK_FK_fk9k5xs3rq3s65v603cf0kptim6_I" inverseSideOf="LINK_FK_fk9k5xs3rq3s65v603cf0kptim6_O" javaName="listOfPresenceReunion" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="PresenceReunion" targetTableName="presence_reunion" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk78qlacbfa4erxes751e34wa2c" id="LINK_FK_fk78qlacbfa4erxes751e34wa2c_I" inverseSideOf="LINK_FK_fk78qlacbfa4erxes751e34wa2c_O" javaName="listOfReunionParticipants" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="ReunionParticipants" targetTableName="reunion_participants" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkb7b11aoljswponkwndp65edws" id="LINK_FK_fkb7b11aoljswponkwndp65edws_I" inverseSideOf="LINK_FK_fkb7b11aoljswponkwndp65edws_O" javaName="listOfFeedback" javaType="unused" joinTableName="" mappedBy="membre" optional="" owningSide="false" sourceTableName="membre" targetEntity="Feedback" targetTableName="feedback" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkpjybh575m9ndkb9hx9om4mtog" id="LINK_FK_fkpjybh575m9ndkb9hx9om4mtog_O" inverseSideOf="" javaName="fonction" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="membre" targetEntity="Fonction" targetTableName="fonction" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="fonction_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="ModePaiement" name="mode_paiement" schema="public">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="id" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="code" dbNotNull="false" dbPosition="2" dbSize="255" dbTypeName="varchar" inputType="text" javaName="code" javaType="java.lang.String" jdbcTypeCode="12" label="Code" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="3" dbSize="255" dbTypeName="varchar" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="libelle" dbNotNull="false" dbPosition="4" dbSize="255" dbTypeName="varchar" inputType="text" javaName="libelle" javaType="java.lang.String" jdbcTypeCode="12" label="Libelle" maxLength="255" notNull="false" selected="true"/>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Notification" name="notification" schema="public">
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_envoi" dbNotNull="true" dbPosition="1" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateEnvoi" javaType="java.util.Date" jdbcTypeCode="93" label="Date envoi" notNull="true" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_notification" dbNotNull="true" dbPosition="2" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idNotification" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id notification" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="id_membre" dbNotNull="true" dbPosition="3" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="idMembre" javaType="java.lang.String" jdbcTypeCode="1111" label="Id membre" maxLength="2147483647" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="message" dbNotNull="true" dbPosition="4" dbSize="2147483647" dbTypeName="text" inputType="text" javaName="message" javaType="java.lang.String" jdbcTypeCode="12" label="Message" maxLength="2147483647" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="statut_lecture" dbNotNull="true" dbPosition="5" dbSize="255" dbTypeName="varchar" inputType="text" javaName="statutLecture" javaType="java.lang.String" jdbcTypeCode="12" label="Statut lecture" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="type_notification" dbNotNull="true" dbPosition="6" dbSize="255" dbTypeName="varchar" inputType="text" javaName="typeNotification" javaType="java.lang.String" jdbcTypeCode="12" label="Type notification" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <fk name="fkoeoxqnv520mvywxtpt0tdl7ax">
+                <fkcol colname="id_membre" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="notification" tableref="membre" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkoeoxqnv520mvywxtpt0tdl7ax" id="LINK_FK_fkoeoxqnv520mvywxtpt0tdl7ax_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="notification" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="id_membre" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Organisation" name="organisation" schema="public">
+            <column dateType="D" dbComment="" dbDefaultValue="" dbName="date_creation" dbNotNull="false" dbPosition="1" dbSize="13" dbTypeName="date" inputType="date" javaName="dateCreation" javaType="java.util.Date" jdbcTypeCode="91" label="Date creation" notNull="false" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_association" dbNotNull="true" dbPosition="2" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idAssociation" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id association" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="adresse" dbNotNull="false" dbPosition="3" dbSize="255" dbTypeName="varchar" inputType="text" javaName="adresse" javaType="java.lang.String" jdbcTypeCode="12" label="Adresse" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="4" dbSize="2147483647" dbTypeName="text" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="2147483647" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="nom_association" dbNotNull="true" dbPosition="5" dbSize="255" dbTypeName="varchar" inputType="text" javaName="nomAssociation" javaType="java.lang.String" jdbcTypeCode="12" label="Nom association" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="statut" dbNotNull="false" dbPosition="6" dbSize="255" dbTypeName="varchar" inputType="text" javaName="statut" javaType="java.lang.String" jdbcTypeCode="12" label="Statut" maxLength="255" notNull="false" selected="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk6smdvfygs2ytguwdcwlyi2suo" id="LINK_FK_fk6smdvfygs2ytguwdcwlyi2suo_I" inverseSideOf="LINK_FK_fk6smdvfygs2ytguwdcwlyi2suo_O" javaName="listOfActivite" javaType="unused" joinTableName="" mappedBy="organisation" optional="" owningSide="false" sourceTableName="organisation" targetEntity="Activite" targetTableName="activite" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk7ev59ypoc6nv8pjnpi5an4vx6" id="LINK_FK_fk7ev59ypoc6nv8pjnpi5an4vx6_I" inverseSideOf="LINK_FK_fk7ev59ypoc6nv8pjnpi5an4vx6_O" javaName="listOfTache" javaType="unused" joinTableName="" mappedBy="organisation" optional="" owningSide="false" sourceTableName="organisation" targetEntity="Tache" targetTableName="tache" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fki93hqt0gk3tgfggvtparr1lle" id="LINK_FK_fki93hqt0gk3tgfggvtparr1lle_I" inverseSideOf="LINK_FK_fki93hqt0gk3tgfggvtparr1lle_O" javaName="listOfEvenement" javaType="unused" joinTableName="" mappedBy="organisation" optional="" owningSide="false" sourceTableName="organisation" targetEntity="Evenement" targetTableName="evenement" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkdrbestvgop4p7um72iug5felg" id="LINK_FK_fkdrbestvgop4p7um72iug5felg_I" inverseSideOf="LINK_FK_fkdrbestvgop4p7um72iug5felg_O" javaName="listOfMembre" javaType="unused" joinTableName="" mappedBy="organisation" optional="" owningSide="false" sourceTableName="organisation" targetEntity="Membre" targetTableName="membre" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkdvj6w0g59ghnq1ksbf43cy2h5" id="LINK_FK_fkdvj6w0g59ghnq1ksbf43cy2h5_I" inverseSideOf="LINK_FK_fkdvj6w0g59ghnq1ksbf43cy2h5_O" javaName="listOfDocument" javaType="unused" joinTableName="" mappedBy="organisation" optional="" owningSide="false" sourceTableName="organisation" targetEntity="Document" targetTableName="document" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fknrn8bytqelson4fkklo3gflbe" id="LINK_FK_fknrn8bytqelson4fkklo3gflbe_I" inverseSideOf="LINK_FK_fknrn8bytqelson4fkklo3gflbe_O" javaName="listOfReunion" javaType="unused" joinTableName="" mappedBy="organisation" optional="" owningSide="false" sourceTableName="organisation" targetEntity="Reunion" targetTableName="reunion" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkhcwb8j728441ywsvic04rvrh6" id="LINK_FK_fkhcwb8j728441ywsvic04rvrh6_I" inverseSideOf="LINK_FK_fkhcwb8j728441ywsvic04rvrh6_O" javaName="listOfIndicateurPerformance" javaType="unused" joinTableName="" mappedBy="organisation" optional="" owningSide="false" sourceTableName="organisation" targetEntity="IndicateurPerformance" targetTableName="indicateur_performance" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkqtbj1y35it7hyssfgc2mdvn7h" id="LINK_FK_fkqtbj1y35it7hyssfgc2mdvn7h_I" inverseSideOf="LINK_FK_fkqtbj1y35it7hyssfgc2mdvn7h_O" javaName="listOfRecette" javaType="unused" joinTableName="" mappedBy="organisation" optional="" owningSide="false" sourceTableName="organisation" targetEntity="Recette" targetTableName="recette" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk2avq61gn0axeflqw4o64d2m0y" id="LINK_FK_fk2avq61gn0axeflqw4o64d2m0y_I" inverseSideOf="LINK_FK_fk2avq61gn0axeflqw4o64d2m0y_O" javaName="listOfDepense" javaType="unused" joinTableName="" mappedBy="organisation" optional="" owningSide="false" sourceTableName="organisation" targetEntity="Depense" targetTableName="depense" used="true"/>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="PresenceActivite" name="presence_activite" schema="public">
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="heure_arrivee" dbNotNull="false" dbPosition="1" dbSize="29" dbTypeName="timestamp" inputType="" javaName="heureArrivee" javaType="java.util.Date" jdbcTypeCode="93" label="Heure arrivee" notNull="false" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="heure_depart" dbNotNull="false" dbPosition="2" dbSize="29" dbTypeName="timestamp" inputType="" javaName="heureDepart" javaType="java.util.Date" jdbcTypeCode="93" label="Heure depart" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="id_activite" dbNotNull="true" dbPosition="3" dbSize="19" dbTypeName="int8" inputType="number" javaName="idActivite" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id activite" notNull="true" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_presence" dbNotNull="true" dbPosition="4" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idPresence" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id presence" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="membre_id" dbNotNull="false" dbPosition="5" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="membreId" javaType="java.lang.String" jdbcTypeCode="1111" label="Membre id" maxLength="2147483647" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="statut_presence" dbNotNull="false" dbPosition="6" dbSize="255" dbTypeName="varchar" inputType="text" javaName="statutPresence" javaType="java.lang.String" jdbcTypeCode="12" label="Statut presence" maxLength="255" notNull="false" selected="true"/>
+            <fk name="fk5ppbc2nhu9iuysoqwjrsnahmq">
+                <fkcol colname="membre_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="presence_activite" tableref="membre" updaterule="3"/>
+            </fk>
+            <fk name="fkp47otipppqgfpauwvcj3y238m">
+                <fkcol colname="id_activite" colref="id_activite" deferrable="7" deleterule="3" sequence="1" tablename="presence_activite" tableref="activite" updaterule="3"/>
+            </fk>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkfq7roga4pi6w0qbn38rx2v4mo" id="LINK_FK_fkfq7roga4pi6w0qbn38rx2v4mo_I" inverseSideOf="LINK_FK_fkfq7roga4pi6w0qbn38rx2v4mo_O" javaName="listOfActivitePresenceActivites" javaType="unused" joinTableName="" mappedBy="presenceActivite" optional="" owningSide="false" sourceTableName="presence_activite" targetEntity="ActivitePresenceActivites" targetTableName="activite_presence_activites" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkp47otipppqgfpauwvcj3y238m" id="LINK_FK_fkp47otipppqgfpauwvcj3y238m_O" inverseSideOf="" javaName="activite" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="presence_activite" targetEntity="Activite" targetTableName="activite" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="id_activite" nullable="true" referencedColumnName="id_activite" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk5ppbc2nhu9iuysoqwjrsnahmq" id="LINK_FK_fk5ppbc2nhu9iuysoqwjrsnahmq_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="presence_activite" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="membre_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="PresenceEvenement" name="presence_evenement" schema="public">
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="heure_arrivee" dbNotNull="false" dbPosition="1" dbSize="29" dbTypeName="timestamp" inputType="" javaName="heureArrivee" javaType="java.util.Date" jdbcTypeCode="93" label="Heure arrivee" notNull="false" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="heure_depart" dbNotNull="false" dbPosition="2" dbSize="29" dbTypeName="timestamp" inputType="" javaName="heureDepart" javaType="java.util.Date" jdbcTypeCode="93" label="Heure depart" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="id_evenement" dbNotNull="true" dbPosition="3" dbSize="19" dbTypeName="int8" inputType="number" javaName="idEvenement" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id evenement" notNull="true" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_presence" dbNotNull="true" dbPosition="4" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idPresence" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id presence" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="membre_id" dbNotNull="false" dbPosition="5" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="membreId" javaType="java.lang.String" jdbcTypeCode="1111" label="Membre id" maxLength="2147483647" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="statut_presence" dbNotNull="false" dbPosition="6" dbSize="255" dbTypeName="varchar" inputType="text" javaName="statutPresence" javaType="java.lang.String" jdbcTypeCode="12" label="Statut presence" maxLength="255" notNull="false" selected="true"/>
+            <fk name="fk1b0ebl29t439siqmjyyols5sn">
+                <fkcol colname="membre_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="presence_evenement" tableref="membre" updaterule="3"/>
+            </fk>
+            <fk name="fk7o81v4t8r9r2l43w1jx7gh6q5">
+                <fkcol colname="id_evenement" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="presence_evenement" tableref="evenement" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk1b0ebl29t439siqmjyyols5sn" id="LINK_FK_fk1b0ebl29t439siqmjyyols5sn_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="presence_evenement" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="membre_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkg2c1ov6f8vylvun3sspiamqql" id="LINK_FK_fkg2c1ov6f8vylvun3sspiamqql_I" inverseSideOf="LINK_FK_fkg2c1ov6f8vylvun3sspiamqql_O" javaName="listOfEvenementPresenceEvenements" javaType="unused" joinTableName="" mappedBy="presenceEvenement" optional="" owningSide="false" sourceTableName="presence_evenement" targetEntity="EvenementPresenceEvenements" targetTableName="evenement_presence_evenements" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk7o81v4t8r9r2l43w1jx7gh6q5" id="LINK_FK_fk7o81v4t8r9r2l43w1jx7gh6q5_O" inverseSideOf="" javaName="evenement" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="presence_evenement" targetEntity="Evenement" targetTableName="evenement" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="id_evenement" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="PresenceReunion" name="presence_reunion" schema="public">
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="heure_arrivee" dbNotNull="false" dbPosition="1" dbSize="29" dbTypeName="timestamp" inputType="" javaName="heureArrivee" javaType="java.util.Date" jdbcTypeCode="93" label="Heure arrivee" notNull="false" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="heure_depart" dbNotNull="false" dbPosition="2" dbSize="29" dbTypeName="timestamp" inputType="" javaName="heureDepart" javaType="java.util.Date" jdbcTypeCode="93" label="Heure depart" notNull="false" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_presence" dbNotNull="true" dbPosition="3" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idPresence" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id presence" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="id_reunion" dbNotNull="true" dbPosition="4" dbSize="19" dbTypeName="int8" inputType="number" javaName="idReunion" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id reunion" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="membre_id" dbNotNull="false" dbPosition="5" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="membreId" javaType="java.lang.String" jdbcTypeCode="1111" label="Membre id" maxLength="2147483647" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="statut_presence" dbNotNull="false" dbPosition="6" dbSize="255" dbTypeName="varchar" inputType="text" javaName="statutPresence" javaType="java.lang.String" jdbcTypeCode="12" label="Statut presence" maxLength="255" notNull="false" selected="true"/>
+            <fk name="fk9k5xs3rq3s65v603cf0kptim6">
+                <fkcol colname="membre_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="presence_reunion" tableref="membre" updaterule="3"/>
+            </fk>
+            <fk name="fksunqfnugb3mwfojop5vgilop6">
+                <fkcol colname="id_reunion" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="presence_reunion" tableref="reunion" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk9k5xs3rq3s65v603cf0kptim6" id="LINK_FK_fk9k5xs3rq3s65v603cf0kptim6_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="presence_reunion" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="membre_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fksunqfnugb3mwfojop5vgilop6" id="LINK_FK_fksunqfnugb3mwfojop5vgilop6_O" inverseSideOf="" javaName="reunion" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="presence_reunion" targetEntity="Reunion" targetTableName="reunion" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="id_reunion" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkss013o08l2878s562hbe2b83p" id="LINK_FK_fkss013o08l2878s562hbe2b83p_I" inverseSideOf="LINK_FK_fkss013o08l2878s562hbe2b83p_O" javaName="listOfReunionPresenceReunions" javaType="unused" joinTableName="" mappedBy="presenceReunion" optional="" owningSide="false" sourceTableName="presence_reunion" targetEntity="ReunionPresenceReunions" targetTableName="reunion_presence_reunions" used="true"/>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Recette" name="recette" schema="public">
+            <column dateType="D" dbComment="" dbDefaultValue="" dbName="date_recette" dbNotNull="true" dbPosition="1" dbSize="13" dbTypeName="date" inputType="date" javaName="dateRecette" javaType="java.util.Date" jdbcTypeCode="91" label="Date recette" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="montant" dbNotNull="true" dbPosition="2" dbSize="17" dbTypeName="float8" inputType="number" javaName="montant" javaType="java.lang.Double" jdbcTypeCode="8" label="Montant" notNull="true" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_recette" dbNotNull="true" dbPosition="3" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idRecette" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id recette" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="organisation_id_association" dbNotNull="false" dbPosition="4" dbSize="19" dbTypeName="int8" inputType="number" javaName="organisationIdAssociation" javaType="java.lang.Long" jdbcTypeCode="-5" label="Organisation id association" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="5" dbSize="2147483647" dbTypeName="text" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="2147483647" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="type_recette" dbNotNull="false" dbPosition="6" dbSize="255" dbTypeName="varchar" inputType="text" javaName="typeRecette" javaType="java.lang.String" jdbcTypeCode="12" label="Type recette" maxLength="255" notNull="false" selected="true"/>
+            <fk name="fkqtbj1y35it7hyssfgc2mdvn7h">
+                <fkcol colname="organisation_id_association" colref="id_association" deferrable="7" deleterule="3" sequence="1" tablename="recette" tableref="organisation" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkqtbj1y35it7hyssfgc2mdvn7h" id="LINK_FK_fkqtbj1y35it7hyssfgc2mdvn7h_O" inverseSideOf="" javaName="organisation" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="recette" targetEntity="Organisation" targetTableName="organisation" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="organisation_id_association" nullable="true" referencedColumnName="id_association" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Recompense" name="recompense" schema="public">
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_attribution" dbNotNull="true" dbPosition="1" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateAttribution" javaType="java.util.Date" jdbcTypeCode="93" label="Date attribution" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="evenement_id" dbNotNull="false" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="evenementId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Evenement id" notNull="false" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_recompense" dbNotNull="true" dbPosition="3" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idRecompense" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id recompense" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="membre_id" dbNotNull="false" dbPosition="4" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="membreId" javaType="java.lang.String" jdbcTypeCode="1111" label="Membre id" maxLength="2147483647" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="5" dbSize="255" dbTypeName="varchar" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="nom_recompense" dbNotNull="true" dbPosition="6" dbSize="255" dbTypeName="varchar" inputType="text" javaName="nomRecompense" javaType="java.lang.String" jdbcTypeCode="12" label="Nom recompense" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <fk name="fk336ocepp62vn6vpcbvvqdoih">
+                <fkcol colname="membre_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="recompense" tableref="membre" updaterule="3"/>
+            </fk>
+            <fk name="fk3pgq32n22dsi1kqkqtfvm3q5q">
+                <fkcol colname="evenement_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="recompense" tableref="evenement" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk336ocepp62vn6vpcbvvqdoih" id="LINK_FK_fk336ocepp62vn6vpcbvvqdoih_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="recompense" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="membre_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk3pgq32n22dsi1kqkqtfvm3q5q" id="LINK_FK_fk3pgq32n22dsi1kqkqtfvm3q5q_O" inverseSideOf="" javaName="evenement" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="recompense" targetEntity="Evenement" targetTableName="evenement" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="evenement_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Reunion" name="reunion" schema="public">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="id" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_heure" dbNotNull="false" dbPosition="2" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateHeure" javaType="java.util.Date" jdbcTypeCode="93" label="Date heure" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="lieu" dbNotNull="false" dbPosition="3" dbSize="255" dbTypeName="varchar" inputType="text" javaName="lieu" javaType="java.lang.String" jdbcTypeCode="12" label="Lieu" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="organisation_id_association" dbNotNull="false" dbPosition="3" dbSize="19" dbTypeName="int8" inputType="number" javaName="organisationIdAssociation" javaType="java.lang.Long" jdbcTypeCode="-5" label="Organisation id association" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="sujet" dbNotNull="false" dbPosition="4" dbSize="255" dbTypeName="varchar" inputType="text" javaName="sujet" javaType="java.lang.String" jdbcTypeCode="12" label="Sujet" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="ordre_du_jour" dbNotNull="false" dbPosition="5" dbSize="255" dbTypeName="varchar" inputType="text" javaName="ordreDuJour" javaType="java.lang.String" jdbcTypeCode="12" label="Ordre du jour" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="reference" dbNotNull="false" dbPosition="6" dbSize="255" dbTypeName="varchar" inputType="text" javaName="reference" javaType="java.lang.String" jdbcTypeCode="12" label="Reference" maxLength="255" notNull="false" selected="true"/>
+            <fk name="fknrn8bytqelson4fkklo3gflbe">
+                <fkcol colname="organisation_id_association" colref="id_association" deferrable="7" deleterule="3" sequence="1" tablename="reunion" tableref="organisation" updaterule="3"/>
+            </fk>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk2ir6dfvywpusnpjc62f3oqmw2" id="LINK_FK_fk2ir6dfvywpusnpjc62f3oqmw2_I" inverseSideOf="LINK_FK_fk2ir6dfvywpusnpjc62f3oqmw2_O" javaName="listOfCompteRendu" javaType="unused" joinTableName="" mappedBy="reunion" optional="" owningSide="false" sourceTableName="reunion" targetEntity="CompteRendu" targetTableName="compte_rendu" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkp53rlvumklyjw664bx8bfynan" id="LINK_FK_fkp53rlvumklyjw664bx8bfynan_I" inverseSideOf="LINK_FK_fkp53rlvumklyjw664bx8bfynan_O" javaName="listOfTache" javaType="unused" joinTableName="" mappedBy="reunion" optional="" owningSide="false" sourceTableName="reunion" targetEntity="Tache" targetTableName="tache" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fknrn8bytqelson4fkklo3gflbe" id="LINK_FK_fknrn8bytqelson4fkklo3gflbe_O" inverseSideOf="" javaName="organisation" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="reunion" targetEntity="Organisation" targetTableName="organisation" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="organisation_id_association" nullable="true" referencedColumnName="id_association" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk56y3rx30hemp0chy7hy5ethiv" id="LINK_FK_fk56y3rx30hemp0chy7hy5ethiv_I" inverseSideOf="LINK_FK_fk56y3rx30hemp0chy7hy5ethiv_O" javaName="listOfReunionParticipants" javaType="unused" joinTableName="" mappedBy="reunion" optional="" owningSide="false" sourceTableName="reunion" targetEntity="ReunionParticipants" targetTableName="reunion_participants" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkby4t3bd7lox9ln2xitavsge93" id="LINK_FK_fkby4t3bd7lox9ln2xitavsge93_I" inverseSideOf="LINK_FK_fkby4t3bd7lox9ln2xitavsge93_O" javaName="listOfMedia" javaType="unused" joinTableName="" mappedBy="reunion" optional="" owningSide="false" sourceTableName="reunion" targetEntity="Media" targetTableName="media" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fktlgekhogggp3fr7uonj4ag2g6" id="LINK_FK_fktlgekhogggp3fr7uonj4ag2g6_I" inverseSideOf="LINK_FK_fktlgekhogggp3fr7uonj4ag2g6_O" javaName="listOfReunionComptesRendus" javaType="unused" joinTableName="" mappedBy="reunion" optional="" owningSide="false" sourceTableName="reunion" targetEntity="ReunionComptesRendus" targetTableName="reunion_comptes_rendus" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fksunqfnugb3mwfojop5vgilop6" id="LINK_FK_fksunqfnugb3mwfojop5vgilop6_I" inverseSideOf="LINK_FK_fksunqfnugb3mwfojop5vgilop6_O" javaName="listOfPresenceReunion" javaType="unused" joinTableName="" mappedBy="reunion" optional="" owningSide="false" sourceTableName="reunion" targetEntity="PresenceReunion" targetTableName="presence_reunion" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk9denrw6uv2utik9y14g5srrm2" id="LINK_FK_fk9denrw6uv2utik9y14g5srrm2_I" inverseSideOf="LINK_FK_fk9denrw6uv2utik9y14g5srrm2_O" javaName="listOfReunionMedias" javaType="unused" joinTableName="" mappedBy="reunion" optional="" owningSide="false" sourceTableName="reunion" targetEntity="ReunionMedias" targetTableName="reunion_medias" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fko5nfsy666f9jj7o301y4xl0n2" id="LINK_FK_fko5nfsy666f9jj7o301y4xl0n2_I" inverseSideOf="LINK_FK_fko5nfsy666f9jj7o301y4xl0n2_O" javaName="listOfReunionPresenceReunions" javaType="unused" joinTableName="" mappedBy="reunion" optional="" owningSide="false" sourceTableName="reunion" targetEntity="ReunionPresenceReunions" targetTableName="reunion_presence_reunions" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkd9dngofnh0790vwrpqo93wc90" id="LINK_FK_fkd9dngofnh0790vwrpqo93wc90_I" inverseSideOf="LINK_FK_fkd9dngofnh0790vwrpqo93wc90_O" javaName="listOfValidation" javaType="unused" joinTableName="" mappedBy="reunion" optional="" owningSide="false" sourceTableName="reunion" targetEntity="Validation" targetTableName="validation" used="true"/>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="ReunionComptesRendus" name="reunion_comptes_rendus" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="reunion_id" dbNotNull="true" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="reunionId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Reunion id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="comptes_rendus_id" dbNotNull="true" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="comptesRendusId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Comptes rendus id" notNull="true" selected="true"/>
+            <fk name="fkf7t1b58mf752wkio8xrd2fh5">
+                <fkcol colname="comptes_rendus_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="reunion_comptes_rendus" tableref="compte_rendu" updaterule="3"/>
+            </fk>
+            <fk name="fktlgekhogggp3fr7uonj4ag2g6">
+                <fkcol colname="reunion_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="reunion_comptes_rendus" tableref="reunion" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fktlgekhogggp3fr7uonj4ag2g6" id="LINK_FK_fktlgekhogggp3fr7uonj4ag2g6_O" inverseSideOf="" javaName="reunion" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="reunion_comptes_rendus" targetEntity="Reunion" targetTableName="reunion" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="reunion_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkf7t1b58mf752wkio8xrd2fh5" id="LINK_FK_fkf7t1b58mf752wkio8xrd2fh5_O" inverseSideOf="" javaName="compteRendu" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="reunion_comptes_rendus" targetEntity="CompteRendu" targetTableName="compte_rendu" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="comptes_rendus_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="ReunionMedias" name="reunion_medias" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="reunion_id" dbNotNull="true" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="reunionId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Reunion id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="medias_id" dbNotNull="true" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="mediasId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Medias id" notNull="true" selected="true"/>
+            <fk name="fk9denrw6uv2utik9y14g5srrm2">
+                <fkcol colname="reunion_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="reunion_medias" tableref="reunion" updaterule="3"/>
+            </fk>
+            <fk name="fkg4br3jpa4ap54sf1vlvveprp1">
+                <fkcol colname="medias_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="reunion_medias" tableref="media" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk9denrw6uv2utik9y14g5srrm2" id="LINK_FK_fk9denrw6uv2utik9y14g5srrm2_O" inverseSideOf="" javaName="reunion" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="reunion_medias" targetEntity="Reunion" targetTableName="reunion" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="reunion_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkg4br3jpa4ap54sf1vlvveprp1" id="LINK_FK_fkg4br3jpa4ap54sf1vlvveprp1_O" inverseSideOf="" javaName="media" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="reunion_medias" targetEntity="Media" targetTableName="media" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="medias_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="ReunionParticipants" name="reunion_participants" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="reunion_id" dbNotNull="true" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="reunionId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Reunion id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="participants_id" dbNotNull="true" dbPosition="2" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="participantsId" javaType="java.lang.String" jdbcTypeCode="1111" label="Participants id" maxLength="2147483647" notEmpty="true" notNull="true" selected="true"/>
+            <fk name="fk56y3rx30hemp0chy7hy5ethiv">
+                <fkcol colname="reunion_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="reunion_participants" tableref="reunion" updaterule="3"/>
+            </fk>
+            <fk name="fk78qlacbfa4erxes751e34wa2c">
+                <fkcol colname="participants_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="reunion_participants" tableref="membre" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk78qlacbfa4erxes751e34wa2c" id="LINK_FK_fk78qlacbfa4erxes751e34wa2c_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="reunion_participants" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="participants_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk56y3rx30hemp0chy7hy5ethiv" id="LINK_FK_fk56y3rx30hemp0chy7hy5ethiv_O" inverseSideOf="" javaName="reunion" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="reunion_participants" targetEntity="Reunion" targetTableName="reunion" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="reunion_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="ReunionPresenceReunions" name="reunion_presence_reunions" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="presence_reunions_id_presence" dbNotNull="true" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="presenceReunionsIdPresence" javaType="java.lang.Long" jdbcTypeCode="-5" label="Presence reunions id presence" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="reunion_id" dbNotNull="true" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="reunionId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Reunion id" notNull="true" selected="true"/>
+            <fk name="fko5nfsy666f9jj7o301y4xl0n2">
+                <fkcol colname="reunion_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="reunion_presence_reunions" tableref="reunion" updaterule="3"/>
+            </fk>
+            <fk name="fkss013o08l2878s562hbe2b83p">
+                <fkcol colname="presence_reunions_id_presence" colref="id_presence" deferrable="7" deleterule="3" sequence="1" tablename="reunion_presence_reunions" tableref="presence_reunion" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkss013o08l2878s562hbe2b83p" id="LINK_FK_fkss013o08l2878s562hbe2b83p_O" inverseSideOf="" javaName="presenceReunion" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="reunion_presence_reunions" targetEntity="PresenceReunion" targetTableName="presence_reunion" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="presence_reunions_id_presence" nullable="true" referencedColumnName="id_presence" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fko5nfsy666f9jj7o301y4xl0n2" id="LINK_FK_fko5nfsy666f9jj7o301y4xl0n2_O" inverseSideOf="" javaName="reunion" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="reunion_presence_reunions" targetEntity="Reunion" targetTableName="reunion" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="reunion_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Role" name="role" schema="public">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="role_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="roleId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Role id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="role" dbNotNull="false" dbPosition="2" dbSize="255" dbTypeName="varchar" inputType="text" javaName="role" javaType="java.lang.String" jdbcTypeCode="12" label="Role" maxLength="255" notNull="false" selected="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fka68196081fvovjhkek5m97n3y" id="LINK_FK_fka68196081fvovjhkek5m97n3y_I" inverseSideOf="LINK_FK_fka68196081fvovjhkek5m97n3y_O" javaName="listOfUserRole" javaType="unused" joinTableName="" mappedBy="role" optional="" owningSide="false" sourceTableName="role" targetEntity="UserRole" targetTableName="user_role" used="true"/>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Tache" name="tache" schema="public">
+            <column dateType="D" dbComment="" dbDefaultValue="" dbName="date_echeance" dbNotNull="false" dbPosition="1" dbSize="13" dbTypeName="date" inputType="date" javaName="dateEcheance" javaType="java.util.Date" jdbcTypeCode="91" label="Date echeance" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="activite_id_activite" dbNotNull="false" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="activiteIdActivite" javaType="java.lang.Long" jdbcTypeCode="-5" label="Activite id activite" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="association_id_association" dbNotNull="false" dbPosition="3" dbSize="19" dbTypeName="int8" inputType="number" javaName="associationIdAssociation" javaType="java.lang.Long" jdbcTypeCode="-5" label="Association id association" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="evenement_id" dbNotNull="false" dbPosition="4" dbSize="19" dbTypeName="int8" inputType="number" javaName="evenementId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Evenement id" notNull="false" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_tache" dbNotNull="true" dbPosition="5" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idTache" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id tache" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="reunion_id" dbNotNull="false" dbPosition="6" dbSize="19" dbTypeName="int8" inputType="number" javaName="reunionId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Reunion id" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="id_responsable" dbNotNull="true" dbPosition="7" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="idResponsable" javaType="java.lang.String" jdbcTypeCode="1111" label="Id responsable" maxLength="2147483647" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="8" dbSize="2147483647" dbTypeName="text" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="2147483647" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="nom_tache" dbNotNull="true" dbPosition="9" dbSize="255" dbTypeName="varchar" inputType="text" javaName="nomTache" javaType="java.lang.String" jdbcTypeCode="12" label="Nom tache" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="statut_tache" dbNotNull="false" dbPosition="10" dbSize="255" dbTypeName="varchar" inputType="text" javaName="statutTache" javaType="java.lang.String" jdbcTypeCode="12" label="Statut tache" maxLength="255" notNull="false" selected="true"/>
+            <fk name="fk3317omx6kgpc1iaif8b29p6kw">
+                <fkcol colname="activite_id_activite" colref="id_activite" deferrable="7" deleterule="3" sequence="1" tablename="tache" tableref="activite" updaterule="3"/>
+            </fk>
+            <fk name="fk3j9vub6x05bon5wkhyyjoh4c9">
+                <fkcol colname="id_responsable" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="tache" tableref="membre" updaterule="3"/>
+            </fk>
+            <fk name="fk7ev59ypoc6nv8pjnpi5an4vx6">
+                <fkcol colname="association_id_association" colref="id_association" deferrable="7" deleterule="3" sequence="1" tablename="tache" tableref="organisation" updaterule="3"/>
+            </fk>
+            <fk name="fkp53rlvumklyjw664bx8bfynan">
+                <fkcol colname="reunion_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="tache" tableref="reunion" updaterule="3"/>
+            </fk>
+            <fk name="fkrcvat0njtuigli4j26wh8uymh">
+                <fkcol colname="evenement_id" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="tache" tableref="evenement" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk3317omx6kgpc1iaif8b29p6kw" id="LINK_FK_fk3317omx6kgpc1iaif8b29p6kw_O" inverseSideOf="" javaName="activite" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="tache" targetEntity="Activite" targetTableName="activite" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="activite_id_activite" nullable="true" referencedColumnName="id_activite" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkrcvat0njtuigli4j26wh8uymh" id="LINK_FK_fkrcvat0njtuigli4j26wh8uymh_O" inverseSideOf="" javaName="evenement" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="tache" targetEntity="Evenement" targetTableName="evenement" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="evenement_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk7ev59ypoc6nv8pjnpi5an4vx6" id="LINK_FK_fk7ev59ypoc6nv8pjnpi5an4vx6_O" inverseSideOf="" javaName="organisation" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="tache" targetEntity="Organisation" targetTableName="organisation" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="association_id_association" nullable="true" referencedColumnName="id_association" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkp53rlvumklyjw664bx8bfynan" id="LINK_FK_fkp53rlvumklyjw664bx8bfynan_O" inverseSideOf="" javaName="reunion" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="tache" targetEntity="Reunion" targetTableName="reunion" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="reunion_id" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk3j9vub6x05bon5wkhyyjoh4c9" id="LINK_FK_fk3j9vub6x05bon5wkhyyjoh4c9_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="tache" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="id_responsable" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="TypeDocument" name="type_document" schema="public">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="id" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="code" dbNotNull="false" dbPosition="2" dbSize="255" dbTypeName="varchar" inputType="text" javaName="code" javaType="java.lang.String" jdbcTypeCode="12" label="Code" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="3" dbSize="255" dbTypeName="varchar" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="255" notNull="false" selected="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk7eys7i8kh0vgql79fmcs52l4u" id="LINK_FK_fk7eys7i8kh0vgql79fmcs52l4u_I" inverseSideOf="LINK_FK_fk7eys7i8kh0vgql79fmcs52l4u_O" javaName="listOfCompteRendu" javaType="unused" joinTableName="" mappedBy="typeDocument" optional="" owningSide="false" sourceTableName="type_document" targetEntity="CompteRendu" targetTableName="compte_rendu" used="true"/>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="UserRole" name="user_role" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="role_id" dbNotNull="true" dbPosition="1" dbSize="19" dbTypeName="int8" inputType="number" javaName="roleId" javaType="java.lang.Long" jdbcTypeCode="-5" label="Role id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="user_id" dbNotNull="true" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="userId" javaType="java.lang.Long" jdbcTypeCode="-5" label="User id" notNull="true" selected="true"/>
+            <fk name="fka68196081fvovjhkek5m97n3y">
+                <fkcol colname="role_id" colref="role_id" deferrable="7" deleterule="3" sequence="1" tablename="user_role" tableref="role" updaterule="3"/>
+            </fk>
+            <fk name="fkj345gk1bovqvfame88rcx7yyx">
+                <fkcol colname="user_id" colref="user_id" deferrable="7" deleterule="3" sequence="1" tablename="user_role" tableref="users" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkj345gk1bovqvfame88rcx7yyx" id="LINK_FK_fkj345gk1bovqvfame88rcx7yyx_O" inverseSideOf="" javaName="users" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="user_role" targetEntity="Users" targetTableName="users" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="user_id" nullable="true" referencedColumnName="user_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fka68196081fvovjhkek5m97n3y" id="LINK_FK_fka68196081fvovjhkek5m97n3y_O" inverseSideOf="" javaName="role" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="user_role" targetEntity="Role" targetTableName="role" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="role_id" nullable="true" referencedColumnName="role_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Users" name="users" schema="public">
+            <column dbComment="" dbDefaultValue="" dbName="enabled" dbNotNull="false" dbPosition="1" dbSize="1" dbTypeName="bool" inputType="checkbox" javaName="enabled" javaType="java.lang.Boolean" jdbcTypeCode="-7" label="Enabled" notNull="false" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="user_id" dbNotNull="true" dbPosition="2" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="userId" javaType="java.lang.Long" jdbcTypeCode="-5" label="User id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="email" dbNotNull="false" dbPosition="3" dbSize="255" dbTypeName="varchar" inputType="text" javaName="email" javaType="java.lang.String" jdbcTypeCode="12" label="Email" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="password" dbNotNull="false" dbPosition="4" dbSize="255" dbTypeName="varchar" inputType="text" javaName="password" javaType="java.lang.String" jdbcTypeCode="12" label="Password" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="username" dbNotNull="false" dbPosition="5" dbSize="255" dbTypeName="varchar" inputType="text" javaName="username" javaType="java.lang.String" jdbcTypeCode="12" label="Username" maxLength="255" notNull="false" selected="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk3asw9wnv76uxu3kr1ekq4i1ld" id="LINK_FK_fk3asw9wnv76uxu3kr1ekq4i1ld_I" inverseSideOf="LINK_FK_fk3asw9wnv76uxu3kr1ekq4i1ld_O" javaName="listOfVerificationToken" javaType="unused" joinTableName="" mappedBy="users" optional="" owningSide="false" sourceTableName="users" targetEntity="VerificationToken" targetTableName="verification_token" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fkj345gk1bovqvfame88rcx7yyx" id="LINK_FK_fkj345gk1bovqvfame88rcx7yyx_I" inverseSideOf="LINK_FK_fkj345gk1bovqvfame88rcx7yyx_O" javaName="listOfUserRole" javaType="unused" joinTableName="" mappedBy="users" optional="" owningSide="false" sourceTableName="users" targetEntity="UserRole" targetTableName="user_role" used="true"/>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="Validation" name="validation" schema="public">
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="date_validation" dbNotNull="true" dbPosition="1" dbSize="29" dbTypeName="timestamp" inputType="" javaName="dateValidation" javaType="java.util.Date" jdbcTypeCode="93" label="Date validation" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="id_depense" dbNotNull="false" dbPosition="2" dbSize="19" dbTypeName="int8" inputType="number" javaName="idDepense" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id depense" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="id_reunion" dbNotNull="false" dbPosition="3" dbSize="19" dbTypeName="int8" inputType="number" javaName="idReunion" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id reunion" notNull="false" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id_validation" dbNotNull="true" dbPosition="4" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="idValidation" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id validation" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="id_membre_validateur" dbNotNull="true" dbPosition="5" dbSize="2147483647" dbTypeName="uuid" inputType="" javaName="idMembreValidateur" javaType="java.lang.String" jdbcTypeCode="1111" label="Id membre validateur" maxLength="2147483647" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="statut_validation" dbNotNull="true" dbPosition="6" dbSize="255" dbTypeName="varchar" inputType="text" javaName="statutValidation" javaType="java.lang.String" jdbcTypeCode="12" label="Statut validation" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="type_validation" dbNotNull="true" dbPosition="7" dbSize="255" dbTypeName="varchar" inputType="text" javaName="typeValidation" javaType="java.lang.String" jdbcTypeCode="12" label="Type validation" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <fk name="fkaglc991elsrww6wg2j4of4yva">
+                <fkcol colname="id_membre_validateur" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="validation" tableref="membre" updaterule="3"/>
+            </fk>
+            <fk name="fkd9dngofnh0790vwrpqo93wc90">
+                <fkcol colname="id_reunion" colref="id" deferrable="7" deleterule="3" sequence="1" tablename="validation" tableref="reunion" updaterule="3"/>
+            </fk>
+            <fk name="fkpt4kuq7tjhe7bt09batilc6er">
+                <fkcol colname="id_depense" colref="id_depense" deferrable="7" deleterule="3" sequence="1" tablename="validation" tableref="depense" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkaglc991elsrww6wg2j4of4yva" id="LINK_FK_fkaglc991elsrww6wg2j4of4yva_O" inverseSideOf="" javaName="membre" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="validation" targetEntity="Membre" targetTableName="membre" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="id_membre_validateur" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkd9dngofnh0790vwrpqo93wc90" id="LINK_FK_fkd9dngofnh0790vwrpqo93wc90_O" inverseSideOf="" javaName="reunion" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="validation" targetEntity="Reunion" targetTableName="reunion" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="id_reunion" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fkpt4kuq7tjhe7bt09batilc6er" id="LINK_FK_fkpt4kuq7tjhe7bt09batilc6er_O" inverseSideOf="" javaName="depense" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="validation" targetEntity="Depense" targetTableName="depense" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="id_depense" nullable="true" referencedColumnName="id_depense" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="" databaseComment="" databaseType="TABLE" javaBean="VerificationToken" name="verification_token" schema="public">
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="expiration_time" dbNotNull="false" dbPosition="1" dbSize="29" dbTypeName="timestamp" inputType="" javaName="expirationTime" javaType="java.util.Date" jdbcTypeCode="93" label="Expiration time" notNull="false" selected="true"/>
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="2" dbPrimaryKey="true" dbSize="19" dbTypeName="int8" inputType="number" javaName="id" javaType="java.lang.Long" jdbcTypeCode="-5" label="Id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="user_id" dbNotNull="false" dbPosition="3" dbSize="19" dbTypeName="int8" inputType="number" javaName="userId" javaType="java.lang.Long" jdbcTypeCode="-5" label="User id" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="token" dbNotNull="false" dbPosition="4" dbSize="255" dbTypeName="varchar" inputType="text" javaName="token" javaType="java.lang.String" jdbcTypeCode="12" label="Token" maxLength="255" notNull="false" selected="true"/>
+            <fk name="fk3asw9wnv76uxu3kr1ekq4i1ld">
+                <fkcol colname="user_id" colref="user_id" deferrable="7" deleterule="3" sequence="1" tablename="verification_token" tableref="users" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk3asw9wnv76uxu3kr1ekq4i1ld" id="LINK_FK_fk3asw9wnv76uxu3kr1ekq4i1ld_O" inverseSideOf="" javaName="users" javaType="unused" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="verification_token" targetEntity="Users" targetTableName="users" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="user_id" nullable="true" referencedColumnName="user_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+    </tableList>
+</root>

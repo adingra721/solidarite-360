@@ -1,0 +1,350 @@
+Update date : Sat Oct 05 13:59:27 GMT 2024
+ 
+ Table 'activite' found in repository
+ . Column 'id' deleted
+ . Column 'date' deleted
+ . Column 'date_debut' added
+ . Column 'date_fin' added
+ . Column 'id_activite' added
+ . Column 'organisation_id' added
+ . Column 'code_postal' added
+ . Column 'description' : Database type changed to text
+ . Column 'description' : Size changed to 2147483647
+ . Column 'description' : Comment changed to null
+ . Column 'description' updated
+ . Column 'lieu' : Comment changed to null
+ . Column 'lieu' updated
+ . Column 'nom' : NotNull changed to true
+ . Column 'nom' : Comment changed to null
+ . Column 'nom' updated
+ . Column 'nom_rue' added
+ . Column 'numero_rue' added
+ . Column 'reference' added
+ . Column 'ville' added
+ . Foreign key 'fk6smdvfygs2ytguwdcwlyi2suo' added
+ (*) table 'activite' updated : 15 change(s)
+ 
+ Table 'activite_comptes_rendus' found in repository
+ . Column 'activite_id' deleted
+ . Foreign key 'fkc6w6o5n1ujle2f77rapnowrs0' deleted
+ . Foreign key 'fklmgij9g3c5opnrb5yycaaqcfy' deleted
+ . Column 'activite_id_activite' added
+ . Column 'comptes_rendus_id' : Comment changed to null
+ . Column 'comptes_rendus_id' updated
+ . Foreign key 'fklbxlpfqys7i2j5r9f0xwli72c' added
+ . Foreign key 'fklqjqm4nq4gwb0u2b1yr9a9mfh' added
+ (*) table 'activite_comptes_rendus' updated : 7 change(s)
+ 
+ Table 'activite_medias' found in repository
+ . Column 'activite_id' deleted
+ . Foreign key 'fk3pl4r5kvmvjusodhw4r023sgt' deleted
+ . Column 'activite_id_activite' added
+ . Column 'medias_id' : Comment changed to null
+ . Column 'medias_id' updated
+ . Foreign key 'fkfgjs8vn5ux0nidrl1s5w94qf3' added
+ (*) table 'activite_medias' updated : 5 change(s)
+ 
+ Table 'activite_participants' found in repository
+ . Column 'activite_id' deleted
+ . Foreign key 'fkl44ix7x67a7cs4u4h2rgntets' deleted
+ . Column 'activite_id_activite' added
+ . Column 'participants_id' : Comment changed to null
+ . Column 'participants_id' updated
+ . Foreign key 'fkap7rb2omi2mdi5w77w7nu0nqq' added
+ (*) table 'activite_participants' updated : 5 change(s)
+ 
+ Table 'activite_presence_activites' not found in repository
+ (+) table 'activite_presence_activites' added
+ 
+ Table 'compte_rendu' found in repository
+ . Column 'activite_id_activite' added
+ . Column 'date_creation' : Comment changed to null
+ . Column 'date_creation' updated
+ . Column 'date_modification' added
+ . Column 'evenement_id' added
+ . Column 'id' : Comment changed to null
+ . Column 'id' updated
+ . Column 'reunion_id' : Comment changed to null
+ . Column 'reunion_id' updated
+ . Column 'type_document_id' added
+ . Column 'auteur_id' : Comment changed to null
+ . Column 'auteur_id' updated
+ . Column 'contenu' : Comment changed to null
+ . Column 'contenu' updated
+ . Foreign key 'fk1tr5pm5qddqfy3ewxi32t5t40' added
+ . Foreign key 'fk2ir6dfvywpusnpjc62f3oqmw2' added
+ . Foreign key 'fk6vnsjpunc3wamwghm7291axyb' added
+ . Foreign key 'fk7eys7i8kh0vgql79fmcs52l4u' added
+ . Foreign key 'fknjl5dswp6dryx9imgdrr1hk2m' added
+ (*) table 'compte_rendu' updated : 14 change(s)
+ 
+ Table 'cotisation' found in repository
+ . Column 'id' deleted
+ . Column 'date_paiement' deleted
+ . Column 'methode_paiement' deleted
+ . Column 'date_cotisation' added
+ . Column 'montant' : Database type changed to float8
+ . Column 'montant' : JDBC type code changed to 8
+ . Column 'montant' : NotNull changed to true
+ . Column 'montant' : Size changed to 17
+ . Column 'montant' : Comment changed to null
+ . Column 'montant' updated
+ . Column 'id_cotisation' added
+ . Column 'membre_id' : NotNull changed to true
+ . Column 'membre_id' : Comment changed to null
+ . Column 'membre_id' updated
+ . Column 'description' : Comment changed to null
+ . Column 'description' updated
+ . Column 'libelle' : NotNull changed to true
+ . Column 'libelle' : Comment changed to null
+ . Column 'libelle' updated
+ . Column 'periode' added
+ . Column 'statut' added
+ (*) table 'cotisation' updated : 11 change(s)
+ 
+ Table 'depense' not found in repository
+ (+) table 'depense' added
+ 
+ Table 'document' found in repository
+ . Column 'id' deleted
+ . Column 'contenu' deleted
+ . Column 'date_creation' deleted
+ . Column 'auteur_id' deleted
+ . Column 'reunion_id' deleted
+ . Column 'type_document_id' deleted
+ . Foreign key 'fka8ajmctq8838xu1gg3f4ma4yt' deleted
+ . Foreign key 'fke8bxll1qey8hrnj2i9t12s6n7' deleted
+ . Foreign key 'fklkgvce29hf3eyfmqtm17p1pe3' deleted
+ . Column 'date_upload' added
+ . Column 'id_document' added
+ . Column 'organisation_id_association' added
+ . Column 'id_membre_uploader' added
+ . Column 'fichier_document' added
+ . Column 'titre_document' added
+ . Column 'type_document' added
+ . Foreign key 'fk6w7tkbuw6kn8nhrco478st4f7' added
+ . Foreign key 'fkdvj6w0g59ghnq1ksbf43cy2h5' added
+ (*) table 'document' updated : 18 change(s)
+ 
+ Table 'evenement' found in repository
+ . Column 'date' deleted
+ . Column 'date_debut' added
+ . Column 'date_fin' added
+ . Column 'id' : Comment changed to null
+ . Column 'id' updated
+ . Column 'organisation_id_association' added
+ . Column 'code_postal' added
+ . Column 'description' : Comment changed to null
+ . Column 'description' updated
+ . Column 'lieu' : Comment changed to null
+ . Column 'lieu' updated
+ . Column 'nom' : Comment changed to null
+ . Column 'nom' updated
+ . Column 'nom_rue' added
+ . Column 'numero_rue' added
+ . Column 'reference' added
+ . Column 'ville' added
+ . Foreign key 'fki93hqt0gk3tgfggvtparr1lle' added
+ (*) table 'evenement' updated : 14 change(s)
+ 
+ Table 'evenement_comptes_rendus' found in repository
+ . Foreign key 'fk3wufay6tsjlnvo66qfjqalp3d' deleted
+ . Column 'comptes_rendus_id' : Comment changed to null
+ . Column 'comptes_rendus_id' updated
+ . Column 'evenement_id' : Comment changed to null
+ . Column 'evenement_id' updated
+ . Foreign key 'fkoexxertbohbt0173xsl4urodn' added
+ (*) table 'evenement_comptes_rendus' updated : 4 change(s)
+ 
+ Table 'evenement_medias' found in repository
+ . Column 'evenement_id' : Comment changed to null
+ . Column 'evenement_id' updated
+ . Column 'medias_id' : Comment changed to null
+ . Column 'medias_id' updated
+ (*) table 'evenement_medias' updated : 2 change(s)
+ 
+ Table 'evenement_participants' found in repository
+ . Column 'evenement_id' : Comment changed to null
+ . Column 'evenement_id' updated
+ . Column 'participants_id' : Comment changed to null
+ . Column 'participants_id' updated
+ (*) table 'evenement_participants' updated : 2 change(s)
+ 
+ Table 'evenement_presence_evenements' not found in repository
+ (+) table 'evenement_presence_evenements' added
+ 
+ Table 'feedback' not found in repository
+ (+) table 'feedback' added
+ 
+ Table 'fonction' found in repository
+ . Column 'id' : Comment changed to null
+ . Column 'id' updated
+ . Column 'code' : Comment changed to null
+ . Column 'code' updated
+ . Column 'description' : Comment changed to null
+ . Column 'description' updated
+ . Column 'libelle' : Comment changed to null
+ . Column 'libelle' updated
+ (*) table 'fonction' updated : 4 change(s)
+ 
+ Table 'indicateur_performance' not found in repository
+ (+) table 'indicateur_performance' added
+ 
+ Table 'media' found in repository
+ . Column 'activite_id' deleted
+ . Foreign key 'fkdi6dt82xe7atl1h6imkt39fxd' deleted
+ . Column 'activite_id_activite' added
+ . Column 'date_creation' : Comment changed to null
+ . Column 'date_creation' updated
+ . Column 'date_prise' added
+ . Column 'evenement_id' : Comment changed to null
+ . Column 'evenement_id' updated
+ . Column 'id' : Comment changed to null
+ . Column 'id' updated
+ . Column 'reunion_id' : Comment changed to null
+ . Column 'reunion_id' updated
+ . Column 'chemin_fichier' : Comment changed to null
+ . Column 'chemin_fichier' updated
+ . Column 'description' : Comment changed to null
+ . Column 'description' updated
+ . Column 'titre' : Comment changed to null
+ . Column 'titre' updated
+ . Column 'type' : Comment changed to null
+ . Column 'type' updated
+ . Foreign key 'fkcva93upg7q6k636agqj8ysukl' added
+ (*) table 'media' updated : 13 change(s)
+ 
+ Table 'membre' found in repository
+ . Column 'date_adhesion' added
+ . Column 'date_inscription' : Comment changed to null
+ . Column 'date_inscription' updated
+ . Column 'date_naissance' : Comment changed to null
+ . Column 'date_naissance' updated
+ . Column 'fonction_id' : Comment changed to null
+ . Column 'fonction_id' updated
+ . Column 'organisation_id_association' added
+ . Column 'id' : Comment changed to null
+ . Column 'id' updated
+ . Column 'code_postal' : Comment changed to null
+ . Column 'code_postal' updated
+ . Column 'email' : Comment changed to null
+ . Column 'email' updated
+ . Column 'nom' : Comment changed to null
+ . Column 'nom' updated
+ . Column 'nom_rue' : Comment changed to null
+ . Column 'nom_rue' updated
+ . Column 'numero_rue' : Comment changed to null
+ . Column 'numero_rue' updated
+ . Column 'prenom' : Comment changed to null
+ . Column 'prenom' updated
+ . Column 'statut' : Comment changed to null
+ . Column 'statut' updated
+ . Column 'telephone' : Comment changed to null
+ . Column 'telephone' updated
+ . Column 'ville' : Comment changed to null
+ . Column 'ville' updated
+ . Foreign key 'fkdrbestvgop4p7um72iug5felg' added
+ (*) table 'membre' updated : 16 change(s)
+ 
+ Table 'mode_paiement' found in repository
+ . Column 'id' : Comment changed to null
+ . Column 'id' updated
+ . Column 'code' : Comment changed to null
+ . Column 'code' updated
+ . Column 'description' : Comment changed to null
+ . Column 'description' updated
+ . Column 'libelle' : Comment changed to null
+ . Column 'libelle' updated
+ (*) table 'mode_paiement' updated : 4 change(s)
+ 
+ Table 'notification' not found in repository
+ (+) table 'notification' added
+ 
+ Table 'organisation' not found in repository
+ (+) table 'organisation' added
+ 
+ Table 'presence_activite' not found in repository
+ (+) table 'presence_activite' added
+ 
+ Table 'presence_evenement' not found in repository
+ (+) table 'presence_evenement' added
+ 
+ Table 'presence_reunion' not found in repository
+ (+) table 'presence_reunion' added
+ 
+ Table 'recette' not found in repository
+ (+) table 'recette' added
+ 
+ Table 'recompense' not found in repository
+ (+) table 'recompense' added
+ 
+ Table 'reunion' found in repository
+ . Column 'date_heure' : Comment changed to null
+ . Column 'date_heure' updated
+ . Column 'id' : Comment changed to null
+ . Column 'id' updated
+ . Column 'organisation_id_association' added
+ . Column 'lieu' : Comment changed to null
+ . Column 'lieu' updated
+ . Column 'ordre_du_jour' added
+ . Column 'reference' added
+ . Column 'sujet' : Comment changed to null
+ . Column 'sujet' updated
+ . Foreign key 'fknrn8bytqelson4fkklo3gflbe' added
+ (*) table 'reunion' updated : 8 change(s)
+ 
+ Table 'reunion_comptes_rendus' found in repository
+ . Foreign key 'fkqk7yx6w40628xv935at8clhfa' deleted
+ . Column 'comptes_rendus_id' : Comment changed to null
+ . Column 'comptes_rendus_id' updated
+ . Column 'reunion_id' : Comment changed to null
+ . Column 'reunion_id' updated
+ . Foreign key 'fkf7t1b58mf752wkio8xrd2fh5' added
+ (*) table 'reunion_comptes_rendus' updated : 4 change(s)
+ 
+ Table 'reunion_medias' found in repository
+ . Column 'medias_id' : Comment changed to null
+ . Column 'medias_id' updated
+ . Column 'reunion_id' : Comment changed to null
+ . Column 'reunion_id' updated
+ (*) table 'reunion_medias' updated : 2 change(s)
+ 
+ Table 'reunion_participants' found in repository
+ . Column 'reunion_id' : Comment changed to null
+ . Column 'reunion_id' updated
+ . Column 'participants_id' : Comment changed to null
+ . Column 'participants_id' updated
+ (*) table 'reunion_participants' updated : 2 change(s)
+ 
+ Table 'reunion_presence_reunions' not found in repository
+ (+) table 'reunion_presence_reunions' added
+ 
+ Table 'role' not found in repository
+ (+) table 'role' added
+ 
+ Table 'tache' not found in repository
+ (+) table 'tache' added
+ 
+ Table 'type_document' found in repository
+ . Column 'id' : Comment changed to null
+ . Column 'id' updated
+ . Column 'code' : Comment changed to null
+ . Column 'code' updated
+ . Column 'description' : Comment changed to null
+ . Column 'description' updated
+ (*) table 'type_document' updated : 3 change(s)
+ 
+ Table 'user_role' not found in repository
+ (+) table 'user_role' added
+ 
+ Table 'users' not found in repository
+ (+) table 'users' added
+ 
+ Table 'validation' not found in repository
+ (+) table 'validation' added
+ 
+ Table 'verification_token' not found in repository
+ (+) table 'verification_token' added
+ 
+ Table 'cotisation_detail' no longer exists in database
+ (-) table 'cotisation_detail' removed

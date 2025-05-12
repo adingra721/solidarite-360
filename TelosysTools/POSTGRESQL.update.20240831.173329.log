@@ -1,0 +1,80 @@
+Update date : Sat Aug 31 17:33:29 GMT 2024
+ 
+ Table 'cotisation' found in repository
+ . Column 'id' : Comment changed to null
+ . Column 'id' updated
+ . Column 'date_paiement' added
+ . Column 'description' : Comment changed to null
+ . Column 'description' updated
+ . Column 'libelle' : Comment changed to null
+ . Column 'libelle' updated
+ . Column 'methode_paiement' added
+ . Column 'montant' : Comment changed to null
+ . Column 'montant' updated
+ . Column 'membre_id' : Comment changed to null
+ . Column 'membre_id' updated
+ (*) table 'cotisation' updated : 7 change(s)
+ 
+ Table 'cotisation_detail' found in repository
+ . Column 'id' : Database type changed to uuid
+ . Column 'id' : JDBC type code changed to 1111
+ . Column 'id' : Comment changed to null
+ . Column 'id' updated
+ . Column 'description' : Comment changed to null
+ . Column 'description' updated
+ . Column 'libelle' : Comment changed to null
+ . Column 'libelle' updated
+ . Column 'libelle_periode' : Comment changed to null
+ . Column 'libelle_periode' updated
+ . Column 'montant' : Comment changed to null
+ . Column 'montant' updated
+ . Column 'periode' : Comment changed to null
+ . Column 'periode' updated
+ . Column 'cotisation_id' : Comment changed to null
+ . Column 'cotisation_id' updated
+ (*) table 'cotisation_detail' updated : 7 change(s)
+ 
+ Table 'fonction' found in repository
+ . Column 'id' added
+ . Column 'code' : NotNull changed to false
+ . Column 'code' : Comment changed to null
+ . Column 'code' : Primary Key flag changed to false
+ . Column 'code' updated
+ . Column 'description' : Comment changed to null
+ . Column 'description' updated
+ . Column 'libelle' : Comment changed to null
+ . Column 'libelle' updated
+ (*) table 'fonction' updated : 4 change(s)
+ 
+ Table 'membre' found in repository
+ . Column 'fonction_code' deleted
+ . Foreign key 'fkijhqmtdwx3beacy97q7u7tyje' deleted
+ . Column 'id' : Comment changed to null
+ . Column 'id' updated
+ . Column 'code_postal' : Comment changed to null
+ . Column 'code_postal' updated
+ . Column 'nom_rue' : Comment changed to null
+ . Column 'nom_rue' updated
+ . Column 'numero_rue' : Comment changed to null
+ . Column 'numero_rue' updated
+ . Column 'ville' : Comment changed to null
+ . Column 'ville' updated
+ . Column 'date_inscription' : Database type changed to date
+ . Column 'date_inscription' : JDBC type code changed to 91
+ . Column 'date_inscription' : Size changed to 13
+ . Column 'date_inscription' : Comment changed to null
+ . Column 'date_inscription' updated
+ . Column 'date_naissance' added
+ . Column 'email' added
+ . Column 'nom' : Comment changed to null
+ . Column 'nom' updated
+ . Column 'prenom' : Comment changed to null
+ . Column 'prenom' updated
+ . Column 'statut' added
+ . Column 'telephone' added
+ . Column 'fonction_id' added
+ . Foreign key 'fkpjybh575m9ndkb9hx9om4mtog' added
+ (*) table 'membre' updated : 16 change(s)
+ 
+ Table 'mode_paiement' not found in repository
+ (+) table 'mode_paiement' added
